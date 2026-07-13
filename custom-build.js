@@ -272,63 +272,6 @@ const qsa = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
   observer.observe(section);
 })();
 
-/* ============================================================
-   CONFIGURADOR
-   Solo cambio de madera
-   ============================================================ */
-
-(function initConfigurator() {
-  const group = qs('.custom-config__group[data-config="wood"]');
-  const guitarImg = qs('#guitarImg');
-
-  if (!group || !guitarImg) return;
-
-  const buttons = qsa('.custom-config__btn', group);
-
-  function changeGuitarImage(source, alt = '') {
-    if (!source) return;
-
-    guitarImg.classList.add('is-changing');
-
-    const preloadImage = new Image();
-
-    preloadImage.onload = () => {
-      guitarImg.src = source;
-
-      if (alt) {
-        guitarImg.alt = alt;
-      }
-
-      requestAnimationFrame(() => {
-        guitarImg.classList.remove('is-changing');
-      });
-    };
-
-    preloadImage.onerror = () => {
-      console.warn(`No se encontró la imagen: ${source}`);
-      guitarImg.classList.remove('is-changing');
-    };
-
-    preloadImage.src = source;
-  }
-
-  buttons.forEach((button) => {
-    button.addEventListener('click', () => {
-      buttons.forEach((otherButton) => {
-        otherButton.classList.remove('is-selected');
-        otherButton.setAttribute('aria-pressed', 'false');
-      });
-
-      button.classList.add('is-selected');
-      button.setAttribute('aria-pressed', 'true');
-
-      changeGuitarImage(
-        button.dataset.img,
-        button.dataset.alt
-      );
-    });
-  });
-})();
 
 /* ============================================================
    GALERÍA DE PROYECTOS
@@ -756,3 +699,99 @@ const qsa = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
     }
   });
 })();
+
+/* ============================================================
+   CONFIGURADOR CUSTOM BUILD
+   Madera + cuerpo + acabado
+   ============================================================ */
+
+document.addEventListener('DOMContentLoaded', () => {
+  const guitarImg = document.getElementById('guitarImg');
+  const guitarFinishImg = document.getElementById('guitarFinishImg');
+
+  const configGroups = document.querySelectorAll('.custom-config__group');
+
+  if (!guitarImg || !configGroups.length) return;
+
+  const state = {
+    wood: 'arce',
+    shape: 'clasica',
+    finish: 'natural'
+  };
+
+  const imageBasePath = 'images/custom-build/configurator/';
+
+  function getGuitarSrc() {
+    return `${imageBasePath}guitar-${state.wood}-${state.shape}.png`;
+  }
+
+  function updateGuitarImage() {
+    const newSrc = getGuitarSrc();
+
+    guitarImg.classList.add('is-changing');
+
+    const preloadImage = new Image();
+
+    preloadImage.onload = () => {
+      guitarImg.src = newSrc;
+
+      if (guitarFinishImg) {
+        guitarFinishImg.src = newSrc;
+      }
+
+      requestAnimationFrame(() => {
+        guitarImg.classList.remove('is-changing');
+      });
+    };
+
+    preloadImage.onerror = () => {
+      console.warn(`No se encontró la imagen: ${newSrc}`);
+      guitarImg.classList.remove('is-changing');
+    };
+
+    preloadImage.src = newSrc;
+  }
+
+  function updateFinish() {
+    if (!guitarFinishImg) return;
+
+    guitarFinishImg.dataset.finish = state.finish;
+  }
+
+  configGroups.forEach((group) => {
+    const configType = group.dataset.config;
+    const buttons = group.querySelectorAll('.custom-config__btn');
+
+    if (!configType || !buttons.length) return;
+
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const value = button.dataset.value;
+
+        if (!value) return;
+
+        state[configType] = value;
+
+        buttons.forEach((item) => {
+          const isSelected = item === button;
+
+          item.classList.toggle('is-selected', isSelected);
+          item.setAttribute('aria-pressed', String(isSelected));
+        });
+
+        if (configType === 'wood' || configType === 'shape') {
+          updateGuitarImage();
+        }
+
+        if (configType === 'finish') {
+          updateFinish();
+        }
+      });
+    });
+  });
+
+  if (guitarFinishImg) {
+    guitarFinishImg.src = getGuitarSrc();
+    guitarFinishImg.dataset.finish = state.finish;
+  }
+});

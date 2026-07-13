@@ -448,190 +448,6 @@ ul {
   background: var(--color-ink);
 }
 
-/* ============================================
-   HERO
-   ============================================ */
-/* ============================================
-   HERO
-   ============================================ */
-
-.hero {
-  position: relative;
-  min-height: 100vh;
-  min-height: 100svh;
-  display: flex;
-  align-items: flex-start;
-  overflow: hidden;
-  background: #8c8c87;
-}
-
-/* Imagen de fondo */
-
-.hero__media {
-  position: absolute;
-  inset: 0;
-}
-
-.hero__img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-
-  /* Ajustá este porcentaje según dónde esté la guitarra */
-  object-position: 68% center;
-
-  transform: scale(1.025);
-  animation: heroZoom 16s var(--ease) forwards;
-}
-
-@keyframes heroZoom {
-  to {
-    transform: scale(1);
-  }
-}
-
-/* Oscurece ligeramente la izquierda para leer el texto */
-
-.hero__overlay {
-  position: absolute;
-  inset: 0;
-
-  background: linear-gradient(
-    90deg,
-    rgba(21, 21, 21, 0.28) 0%,
-    rgba(21, 21, 21, 0.12) 42%,
-    rgba(21, 21, 21, 0) 72%
-  );
-}
-
-/* Contenido */
-
-.hero__content {
-  position: relative;
-  z-index: 2;
-
-  width: 100%;
-  max-width: var(--container-max);
-  margin: 0 auto;
-
-  padding:
-    clamp(7rem, 12vh, 9rem)
-    var(--container-pad)
-    clamp(4rem, 8vh, 7rem);
-}
-
-/* Título */
-
-.hero__title {
-  font-family: var(--font-display);
-  font-size: clamp(4.5rem, 7.5vw, 9rem);
-  font-weight: 300;
-  line-height: 0.84;
-  letter-spacing: -0.055em;
-  text-transform: uppercase;
-  color: var(--color-warm-white);
-  max-width: none;
-  margin: 0;
-  transition-delay: 0.1s;
-}
-
-.hero__title-line {
-  display: block;
-  white-space: nowrap;
-}
-
-/* Palabra destacada */
-
-.hero__title em {
-  font-style: normal;
-  font-weight: 800;
-  letter-spacing: -0.065em;
-}
-
-/* Bajada */
-
-.hero__subtitle {
-  margin-top: clamp(2rem, 3vw, 3rem);
-  max-width: 36ch;
-
-  font-family: var(--font-body);
-  font-size: clamp(1.2rem, 1.55vw, 1.75rem);
-  font-weight: 600;
-  line-height: 1.18;
-  letter-spacing: -0.025em;
-
-  color: var(--color-warm-white);
-
-  transition-delay: 0.2s;
-}
-
-/* Ocultamos solo el scroll cue del hero anterior */
-
-.hero__scroll-cue {
-  display: none;
-}
-
-/* ============================================
-   HERO — TABLET
-   ============================================ */
-
-@media (max-width: 1000px) {
-  .hero__title {
-    font-size: clamp(4rem, 9vw, 7rem);
-  }
-
-  .hero__subtitle {
-    max-width: 30ch;
-  }
-}
-
-/* ============================================
-   HERO — MOBILE
-   ============================================ */
-
-@media (max-width: 640px) {
-  .hero {
-    min-height: 100svh;
-  }
-
-  .hero__img {
-    object-position: 62% center;
-  }
-
-  .hero__overlay {
-    background: linear-gradient(
-      180deg,
-      rgba(21, 21, 21, 0.4) 0%,
-      rgba(21, 21, 21, 0.15) 55%,
-      rgba(21, 21, 21, 0.42) 100%
-    );
-  }
-
-  .hero__content {
-    padding:
-      7rem
-      var(--container-pad)
-      3.5rem;
-  }
-
-  .hero__title {
-    font-size: clamp(3.1rem, 14vw, 5rem);
-    line-height: 0.88;
-    letter-spacing: -0.055em;
-  }
-
-  .hero__title-line {
-    white-space: normal;
-  }
-
-  .hero__subtitle {
-    margin-top: 2rem;
-    max-width: 27ch;
-
-    font-size: clamp(1.05rem, 4.8vw, 1.3rem);
-    line-height: 1.2;
-  }
-}
 
 /* ============================================
    MARQUEE
@@ -2740,141 +2556,6 @@ ul {
 
 
 
-/* ============================================
-   HERO RESPONSIVE — TABLET Y MOBILE
-   Pegar al final del style.css
-   ============================================ */
-
-@media (max-width: 880px) {
-  .hero {
-    min-height: 100vh;
-    min-height: 100svh;
-    align-items: flex-start;
-  }
-
-  /* Reencuadre de la imagen para mostrar más la guitarra */
-  .hero__img {
-    object-position: 80% center;
-  }
-
-  /* Gradiente adaptado a formato vertical */
-  .hero__overlay {
-    background:
-      linear-gradient(
-        180deg,
-        rgba(21, 21, 21, 0.34) 0%,
-        rgba(21, 21, 21, 0.12) 48%,
-        rgba(21, 21, 21, 0.28) 100%
-      );
-  }
-
-  .hero__content {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-
-    /* Deja espacio para el logo y el menú */
-    padding:
-      8.5rem
-      var(--container-pad)
-      3rem;
-
-    overflow: hidden;
-  }
-
-  .hero__title {
-    width: 100%;
-    max-width: 100%;
-
-    /*
-      El valor en vw hace que el título disminuya
-      proporcionalmente al ancho de la pantalla.
-    */
-    font-size: clamp(2.8rem, 10.5vw, 5.5rem);
-    line-height: 0.9;
-    letter-spacing: -0.055em;
-
-    overflow-wrap: normal;
-    word-break: normal;
-  }
-
-  .hero__title-line {
-    display: block;
-    width: 100%;
-    white-space: normal;
-  }
-
-  /*
-    En mobile, IDENTIDAD pasa a una línea propia.
-    Esto evita que el título se corte.
-  */
-  .hero__title em {
-    display: block;
-    font-style: normal;
-    font-weight: 800;
-    letter-spacing: -0.055em;
-  }
-
-  .hero__subtitle {
-    margin-top: 2rem;
-    max-width: 30ch;
-
-    font-size: clamp(1rem, 3.5vw, 1.35rem);
-    font-weight: 600;
-    line-height: 1.24;
-    letter-spacing: -0.02em;
-  }
-}
-
-/* ============================================
-   HERO — CELULARES
-   ============================================ */
-
-@media (max-width: 520px) {
-  .hero__content {
-    padding:
-      7.5rem
-      1.4rem
-      2.5rem;
-  }
-
-  .hero__title {
-    /*
-      En un celular de 390 px queda aproximadamente
-      entre 42 y 46 px.
-    */
-    font-size: clamp(2.55rem, 11vw, 3.25rem);
-    line-height: 0.92;
-    letter-spacing: -0.05em;
-  }
-
-  .hero__title em {
-    letter-spacing: -0.05em;
-  }
-
-@media (max-width: 520px) {
-  .hero__subtitle {
-    margin-top: 2.25rem;
-
-    /* Limita el texto al sector izquierdo */
-    width: 58%;
-    max-width: 18rem;
-
-    font-size: 1rem;
-    line-height: 1.3;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-  }
-}
-
-  .hero__img {
-    /*
-      Podés variar este porcentaje entre 72% y 88%
-      según dónde se encuentre la guitarra en la foto.
-    */
-    object-position: 75% center;
-  }
-}
 
 /* ============================================
    ESCALA GENERAL MÁS COMPACTA
@@ -2964,34 +2645,6 @@ body {
   padding: 0.55rem 1.1rem;
 }
 
-/* ============================================
-   HERO
-   ============================================ */
-
-.hero {
-  min-height: 88vh;
-  min-height: 88svh;
-}
-
-.hero__content {
-  padding:
-    clamp(6rem, 10vh, 7.5rem)
-    var(--container-pad)
-    4rem;
-}
-
-.hero__title {
-  font-size: clamp(3.6rem, 6.2vw, 7rem);
-  line-height: 0.88;
-}
-
-.hero__subtitle {
-  margin-top: 1.6rem;
-  max-width: 34ch;
-
-  font-size: clamp(1rem, 1.2vw, 1.35rem);
-  line-height: 1.25;
-}
 
 /* ============================================
    MANIFIESTO
@@ -3726,66 +3379,6 @@ body {
   }
 }
 
-/* ============================================
-   HERO — CTA
-   ============================================ */
-
-.hero__actions {
-  margin-top: 1.6rem;
-}
-
-.hero__cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.7rem;
-
-  width: fit-content;
-}
-
-/* Ajuste para que el botón no se pegue al texto */
-.hero__subtitle + .hero__actions {
-  margin-top: 1.65rem;
-}
-
-/* Mobile */
-@media (max-width: 640px) {
-  .hero__actions {
-    margin-top: 1.35rem;
-  }
-
-  .hero__cta {
-    font-size: 0.72rem;
-    padding: 0.7rem 1rem;
-  }
-}
-
-/* ============================================
-   HERO — CTA
-   ============================================ */
-
-.hero__actions {
-  display: flex;
-  margin-top: 1.65rem;
-}
-
-.hero__cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.7rem;
-  width: fit-content;
-}
-
-/* Mobile */
-@media (max-width: 640px) {
-  .hero__actions {
-    margin-top: 1.35rem;
-  }
-
-  .hero__cta {
-    font-size: 0.72rem;
-    padding: 0.7rem 1rem;
-  }
-}
 /* ============================================
    TRASTES PRIVATE — MÁS VERDE DE SISTEMA
    ============================================ */
@@ -5083,13 +4676,14 @@ body {
 .human-craft__cta {
   margin-top: clamp(1.7rem, 3vw, 2.4rem);
 }
-
-/* Imagen */
+/* Media / Video */
 
 .human-craft__media {
   position: relative;
 
-  min-height: clamp(460px, 58vw, 700px);
+  width: 100%;
+  height: clamp(460px, 58vw, 700px);
+  min-height: 0;
 
   margin: 0;
 
@@ -5103,14 +4697,19 @@ body {
     0 34px 80px rgba(33, 19, 12, 0.12);
 }
 
-.human-craft__image {
+/* Sirve tanto para imagen como para video */
+.human-craft__image,
+.human-craft__video {
+  position: absolute;
+  inset: 0;
+
   width: 100%;
   height: 100%;
 
   display: block;
 
   object-fit: cover;
-  object-position: center;
+  object-position: center center;
 
   filter: saturate(0.92) contrast(1.02);
 
@@ -5120,7 +4719,8 @@ body {
 }
 
 @media (hover: hover) {
-  .human-craft__media:hover .human-craft__image {
+  .human-craft__media:hover .human-craft__image,
+  .human-craft__media:hover .human-craft__video {
     transform: scale(1.035);
     filter: saturate(1) contrast(1.04);
   }
@@ -5151,23 +4751,7 @@ body {
   backdrop-filter: blur(10px);
 }
 
-/* Detalle gráfico mostaza */
 
-.human-craft__media::after {
-  content: "";
-
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
-
-  width: 74px;
-  height: 74px;
-
-  border-top: 1px solid var(--color-sound-yellow);
-  border-right: 1px solid var(--color-sound-yellow);
-
-  pointer-events: none;
-}
 
 /* ============================================
    RESPONSIVE
@@ -5281,4 +4865,2851 @@ body {
   height: 100% !important;
   object-fit: cover;
   object-position: center;
+}
+/* ============================================================
+   SISTEMA TIPOGRÁFICO FINAL — HOME + CUSTOM BUILD
+   ============================================================ */
+
+:root {
+--font-display: 'Fraunces', serif;
+--font-body: 'Inter', sans-serif;
+}
+
+/* Títulos generales de la home */
+
+.section-title,
+.manifesto-scroll__text,
+.course-card__title,
+.wood-panel__title,
+.private-dashboard__detail-title,
+.private-feature h3,
+.project-card__quote,
+.contact__title,
+.footer__logo,
+.footer__tagline {
+  font-family: var(--font-display) !important;
+}
+
+/* Títulos principales de sección */
+
+.section-title {
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+/* Palabras destacadas dentro de títulos */
+
+.section-title em,
+.manifesto-scroll__text em,
+.course-card__title em,
+.wood-panel__title em,
+.private-portal__title em,
+.project-card__quote em,
+.contact__title em {
+  font-style: italic;
+  font-weight: 800;
+}
+
+/* Títulos sobre fondo oscuro */
+
+.section-title--light,
+.private-portal__title {
+  color: var(--color-warm-white);
+}
+
+/* El hero de la home queda aparte: todo bold, sin itálica */
+
+.hero__title {
+  font-family: var(--font-display) !important;
+  font-weight: 800 !important;
+}
+
+.hero__title em {
+  font-style: normal !important;
+  font-weight: 800 !important;
+}
+/* ============================================================
+   SISTEMA TIPOGRÁFICO FINAL — INSTRUMENT SERIF
+   ============================================================ */
+
+:root {
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* Títulos principales de la home */
+
+.section-title,
+.manifesto-scroll__text,
+.course-card__title,
+.wood-panel__title,
+.private-portal__title,
+.private-dashboard__detail-title,
+.project-card__quote,
+.contact__title,
+.footer__logo,
+.footer__tagline {
+  font-family: var(--font-display) !important;
+}
+
+/* Títulos editoriales */
+
+.section-title {
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+}
+
+/* Palabras destacadas */
+
+.section-title em,
+.manifesto-scroll__text em,
+.course-card__title em,
+.wood-panel__title em,
+.private-portal__title em,
+.project-card__quote em,
+.contact__title em {
+  font-family: var(--font-display) !important;
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* Hero home: todo bold / sin itálica */
+
+.hero__title {
+  font-family: var(--font-display) !important;
+  font-weight: 400 !important;
+  line-height: 0.86;
+}
+
+.hero__title em {
+  font-style: normal !important;
+  font-weight: 400 !important;
+}
+/* ============================================================
+   ROLLBACK TIPOGRÁFICO — FRAUNCES
+   Tipografía original correcta del sistema
+   ============================================================ */
+
+:root {
+  --font-display: 'Fraunces', serif !important;
+  --font-body: 'Inter', sans-serif !important;
+}
+
+/* Títulos generales home */
+
+.hero__title,
+.section-title,
+.manifesto-scroll__text,
+.course-card__title,
+.wood-panel__title,
+.private-portal__title,
+.private-dashboard__detail-title,
+.private-feature h3,
+.project-card__quote,
+.contact__title,
+.footer__logo,
+.footer__tagline {
+  font-family: var(--font-display) !important;
+}
+
+/* Sistema de títulos de sección */
+
+.section-title {
+  font-weight: 700 !important;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+/* Palabras destacadas */
+
+.section-title em,
+.manifesto-scroll__text em,
+.course-card__title em,
+.wood-panel__title em,
+.private-portal__title em,
+.project-card__quote em,
+.contact__title em {
+  font-family: var(--font-display) !important;
+  font-style: italic !important;
+  font-weight: 800 !important;
+}
+
+/* Hero home: todo bold, sin itálica */
+
+.hero__title {
+  font-weight: 800 !important;
+}
+
+.hero__title em {
+  font-style: normal !important;
+  font-weight: 800 !important;
+}
+/* ============================================================
+   SISTEMA TIPOGRÁFICO FINAL — HOME
+   Cormorant Garamond + palabra destacada
+   ============================================================ */
+
+:root {
+  --font-display: 'Cormorant Garamond', serif !important;
+  --font-body: 'Inter', sans-serif !important;
+}
+
+/* Títulos principales de la home */
+
+.hero__title,
+.section-title,
+.manifesto-scroll__text,
+.course-card__title,
+.wood-panel__title,
+.private-portal__title,
+.private-dashboard__detail-title,
+.private-feature h3,
+.project-card__quote,
+.contact__title,
+.footer__logo,
+.footer__tagline {
+  font-family: var(--font-display) !important;
+}
+
+/* Títulos de sección */
+
+.section-title,
+.private-portal__title,
+.contact__title {
+  font-weight: 600 !important;
+  line-height: 0.92 !important;
+  letter-spacing: -0.035em !important;
+}
+
+/* Palabra destacada dentro de títulos */
+
+.section-title em,
+.private-portal__title em,
+.contact__title em,
+.course-card__title em,
+.wood-panel__title em,
+.project-card__quote em,
+.manifesto-scroll__text em {
+  font-family: var(--font-display) !important;
+  font-style: italic !important;
+  font-weight: 700 !important;
+}
+
+/* Hero home: excepción, todo fuerte y sin itálica */
+
+.hero__title {
+  font-weight: 700 !important;
+  line-height: 0.84 !important;
+  letter-spacing: -0.045em !important;
+}
+
+.hero__title em {
+  font-style: normal !important;
+  font-weight: 700 !important;
+}
+/* ============================================================
+   PALABRA DESTACADA — BOLD ITALIC HOME
+   ============================================================ */
+
+.section-title em,
+.private-portal__title em,
+.contact__title em,
+.course-card__title em,
+.wood-panel__title em,
+.project-card__quote em,
+.manifesto-scroll__text em,
+.human-craft__title em {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-style: italic !important;
+  font-weight: 700 !important;
+}
+/* ============================================================
+   SISTEMA DE MISCELÁNEAS — HOME TRASTES
+   Plano técnico · archivo de taller · marcas de medición
+   ============================================================ */
+
+:root {
+  --trs-line: rgba(33, 19, 12, 0.14);
+  --trs-line-soft: rgba(33, 19, 12, 0.08);
+  --trs-line-dark: rgba(250, 245, 234, 0.18);
+  --trs-code: var(--color-sound-yellow);
+  --trs-code-dark: var(--color-deep-brown);
+  --trs-grid-size: 72px;
+}
+
+/* ------------------------------------------------------------
+   1. Textura general muy sutil
+   ------------------------------------------------------------ */
+
+body::before {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  pointer-events: none;
+
+  opacity: 0.055;
+  mix-blend-mode: multiply;
+
+  background-image:
+    radial-gradient(rgba(33, 19, 12, 0.34) 0.6px, transparent 0.6px);
+  background-size: 4px 4px;
+}
+
+/* ------------------------------------------------------------
+   2. Grilla técnica de fondo en secciones claras
+   ------------------------------------------------------------ */
+
+.workshop,
+.courses,
+.human-craft,
+.wood-library,
+.projects,
+.contact {
+  position: relative;
+  overflow: hidden;
+}
+
+.workshop::before,
+.courses::before,
+.human-craft::after,
+.wood-library::before,
+.projects::before,
+.contact::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  pointer-events: none;
+
+  opacity: 0.28;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(33, 19, 12, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      180deg,
+      rgba(33, 19, 12, 0.028) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    var(--trs-grid-size)
+    var(--trs-grid-size);
+
+  mask-image:
+    linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(0, 0, 0, 0.9) 18%,
+      rgba(0, 0, 0, 0.9) 82%,
+      transparent 100%
+    );
+}
+
+.workshop__inner,
+.courses__head,
+.courses__grid,
+.human-craft__inner,
+.wood-library__header,
+.wood-accordion,
+.projects__head,
+.projects__slider,
+.contact__inner {
+  position: relative;
+  z-index: 1;
+}
+
+
+
+/* ------------------------------------------------------------
+   4. Marca técnica en hero
+   ------------------------------------------------------------ */
+
+.hero::before {
+  content: "";
+
+  position: absolute;
+  right: clamp(1.5rem, 3vw, 2.5rem);
+  bottom: clamp(1.5rem, 3vw, 2.5rem);
+  z-index: 4;
+
+  width: clamp(58px, 7vw, 96px);
+  height: clamp(58px, 7vw, 96px);
+
+  border-right: 1px solid rgba(250, 245, 234, 0.76);
+  border-bottom: 1px solid rgba(250, 245, 234, 0.76);
+
+  pointer-events: none;
+}
+
+.hero::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 4;
+
+  height: 18px;
+
+  pointer-events: none;
+
+  opacity: 0.52;
+
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      rgba(250, 245, 234, 0.5) 0 1px,
+      transparent 1px 18px
+    );
+}
+
+.hero__content::after {
+  content: "TRS–HOME / MADERA · MANOS · SONIDO";
+
+  display: block;
+
+  margin-top: clamp(2rem, 4vw, 3.2rem);
+
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  color: rgba(250, 245, 234, 0.72);
+}
+
+
+/* ------------------------------------------------------------
+   6. Marcas de medición / regla
+   ------------------------------------------------------------ */
+
+.workshop-explorer__media .workshop-explorer__hint::after,
+.wood-accordion::after,
+.projects__slider::after {
+  content: "";
+
+  display: block;
+
+  height: 12px;
+
+  margin-top: 0.9rem;
+
+  opacity: 0.58;
+
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      currentColor 0 1px,
+      transparent 1px 12px
+    );
+
+  color: var(--color-sound-yellow);
+}
+
+/* Regla sobre la imagen de taller */
+
+.workshop-explorer__media::after {
+  box-shadow:
+    inset 0 -16px 0 rgba(0, 0, 0, 0.08);
+}
+
+.workshop-explorer__stage::after {
+  content: "ESCALA 1:1 · CORTE · AJUSTE · RESPUESTA";
+
+  position: absolute;
+  left: 1.25rem;
+  bottom: 1rem;
+  z-index: 4;
+
+  font-family: var(--font-body);
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  color: rgba(250, 245, 234, 0.64);
+
+  pointer-events: none;
+}
+
+/* Cuando el panel está abajo, evitamos superposición visual */
+.workshop-explorer__panel.is-left ~ .workshop-explorer__stage::after {
+  display: none;
+}
+
+
+
+/* ------------------------------------------------------------
+   8. Materiales: escala y datos técnicos
+   ------------------------------------------------------------ */
+
+.wood-library__header {
+  padding-bottom: 0.2rem;
+}
+
+.wood-accordion {
+  position: relative;
+}
+
+.wood-accordion::before {
+  content: "VETA · PESO · DENSIDAD · RESPUESTA";
+
+  position: absolute;
+  right: 0;
+  top: -1.8rem;
+
+  font-family: var(--font-body);
+  font-size: 0.56rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  color: rgba(33, 19, 12, 0.34);
+}
+
+.wood-panel__specs::before {
+  content: "";
+
+  flex-basis: 100%;
+  height: 1px;
+
+  margin-bottom: 0.15rem;
+
+  background: rgba(250, 245, 234, 0.24);
+}
+
+/* ------------------------------------------------------------
+   9. Private: refuerzo de interfaz técnica
+   ------------------------------------------------------------ */
+
+.private-dashboard::before {
+  right: 1.25rem;
+  top: 1.25rem;
+
+  width: 72px;
+  height: 72px;
+
+  border-color: rgba(217, 147, 0, 0.8);
+}
+
+.private-dashboard__topbar::after {
+  content: "LIVE TRACKING · TRS–028 · ETAPA 03";
+
+  font-family: var(--font-body);
+  font-size: 0.54rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  color: rgba(250, 245, 234, 0.36);
+}
+
+/* ------------------------------------------------------------
+   10. Proyectos: archivo de resultados
+   ------------------------------------------------------------ */
+
+.project-card__media::before {
+  left: 1rem;
+  right: auto;
+
+  border-right: 0;
+  border-left: 1px solid var(--color-sound-yellow);
+}
+
+.project-card__info {
+  position: relative;
+  padding-top: 0.4rem;
+}
+
+.project-card__info::before {
+  content: "ARCHIVO / RESULTADO";
+
+  display: block;
+
+  margin-bottom: 0.7rem;
+
+  font-family: var(--font-body);
+  font-size: 0.54rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  color: var(--color-sound-yellow);
+}
+
+/* ------------------------------------------------------------
+   11. Contacto como cierre técnico
+   ------------------------------------------------------------ */
+
+.contact__actions::before {
+  content: "CABA · PRESENCIAL · CUPOS LIMITADOS";
+
+  flex-basis: 100%;
+
+  margin-bottom: 0.2rem;
+
+  font-family: var(--font-body);
+  font-size: 0.56rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  color: rgba(33, 19, 12, 0.35);
+}
+
+/* ------------------------------------------------------------
+   12. Utilities para usar después si querés sumar manualmente
+   ------------------------------------------------------------ */
+
+.trs-code {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+
+  font-family: var(--font-body);
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  color: var(--color-sound-yellow);
+}
+
+.trs-code::after {
+  content: "";
+
+  display: block;
+
+  width: 48px;
+  height: 1px;
+
+  background: currentColor;
+}
+
+.trs-corner {
+  position: relative;
+}
+
+.trs-corner::after {
+  content: "";
+
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+
+  width: 58px;
+  height: 58px;
+
+  border-top: 1px solid var(--color-sound-yellow);
+  border-right: 1px solid var(--color-sound-yellow);
+
+  pointer-events: none;
+}
+
+.trs-ruler {
+  height: 12px;
+
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      currentColor 0 1px,
+      transparent 1px 12px
+    );
+
+  color: var(--color-sound-yellow);
+}
+
+/* ------------------------------------------------------------
+   13. Responsive
+   ------------------------------------------------------------ */
+
+@media (max-width: 900px) {
+  .workshop__head::after,
+  .courses__head::after,
+  .human-craft__content::after,
+  .wood-library__header::after,
+  .private-portal__intro::after,
+  .projects__head::after {
+    position: static;
+
+    display: block;
+
+    margin-top: 1.1rem;
+  }
+
+  .wood-accordion::before {
+    position: static;
+
+    display: block;
+
+    margin-bottom: 1rem;
+  }
+
+  .private-dashboard__topbar::after {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  body::before {
+    opacity: 0.04;
+  }
+
+  .hero::before {
+    width: 54px;
+    height: 54px;
+  }
+
+  .hero__content::after {
+    max-width: 22ch;
+
+    font-size: 0.54rem;
+    line-height: 1.5;
+  }
+
+  .workshop-explorer__stage::after {
+    display: none;
+  }
+
+  .workshop-explorer__media::before,
+  .course-card__media::before,
+  .human-craft__media::before,
+  .wood-panel::before,
+  .private-dashboard::before,
+  .project-card__media::before {
+    width: 44px;
+    height: 44px;
+  }
+
+  .courses__grid .course-card::before {
+    font-size: 0.48rem;
+  }
+
+  .contact__inner::after {
+    bottom: -1.7rem;
+  }
+}                                
+/* ============================================================
+   LIMPIEZA DE MARCAS GRÁFICAS — HOME
+   Elimina reglas inferiores y esquinas técnicas
+   ============================================================ */
+
+/* Saca las líneas verticales repetidas del borde inferior del hero */
+.hero::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Saca la marca de esquina inferior derecha del hero */
+.hero::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* Saca marcas de esquina en imágenes / cards / bloques */
+.workshop-explorer__media::before,
+.course-card__media::before,
+.human-craft__media::before,
+.wood-panel::before,
+.private-dashboard::before,
+.project-card__media::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* Saca cualquier línea vertical corta agregada sobre imágenes */
+.workshop-explorer__stage::after,
+.wood-accordion::before,
+.wood-accordion::after,
+.projects__slider::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Saca líneas tipo regla dentro de hints o recursos técnicos */
+.workshop-explorer__hint::after,
+.contact__actions::before {
+  content: none !important;
+  display: none !important;
+}                 
+/* ============================================================
+   LIMPIEZA — SACAR MARCA DE ESQUINA EN "EL OFICIO"
+   ============================================================ */
+
+.human-craft__media::after,
+.human-craft__media::before {
+  content: none !important;
+  display: none !important;
+}
+
+
+/* ============================================================
+   AJUSTES FINALES HOME — LISTA 11/07
+   ============================================================ */
+
+/* 1. Volantas: línea antes de la palabra */
+
+.eyebrow,
+.custom-eyebrow {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  width: auto !important;
+}
+
+.eyebrow::before,
+.custom-eyebrow::before {
+  content: "" !important;
+  display: block !important;
+  width: 48px;
+  height: 1px;
+  flex: 0 0 48px;
+  margin: 0 !important;
+  background: currentColor !important;
+}
+
+.eyebrow::after,
+.custom-eyebrow::after {
+  content: none !important;
+  display: none !important;
+}
+
+.contact__inner .eyebrow {
+  margin-inline: auto !important;
+  justify-content: center !important;
+}
+
+/* 2. Sección oficio: agrandar punteo */
+
+.human-craft__principle {
+  grid-template-columns: 3.4rem minmax(0, 1fr) !important;
+  gap: 1.1rem !important;
+}
+
+.human-craft__principle span {
+  font-size: 1rem !important;
+  line-height: 1.1 !important;
+}
+
+.human-craft__principle h3 {
+  font-size: 1.125rem !important;
+  line-height: 1.12 !important;
+}
+
+.human-craft__principle p {
+  font-size: 0.9rem !important;
+  line-height: 1.58 !important;
+}
+
+/* 2b. Trastes Private: agrandar punteos y textos chicos */
+
+.private-feature__number {
+  font-size: 0.78rem !important;
+}
+
+.private-feature h3 {
+  font-size: 1.15rem !important;
+  line-height: 1.12 !important;
+}
+
+.private-feature p {
+  font-size: 0.84rem !important;
+  line-height: 1.6 !important;
+}
+
+.private-stage__number {
+  font-size: 0.74rem !important;
+}
+
+.private-stage__name {
+  font-size: 0.88rem !important;
+}
+
+.private-stage__state {
+  font-size: 0.7rem !important;
+}
+
+.private-dashboard__detail-copy {
+  font-size: 0.9rem !important;
+}
+
+.private-dashboard__note p {
+  font-size: 0.82rem !important;
+}
+
+/* 3. Botones: eliminar círculo alrededor de la flecha */
+
+.btn--arrow .btn__arrow,
+.btn--primary .btn__arrow,
+.btn--primary:hover .btn__arrow,
+.btn--ghost .btn__arrow,
+.btn--secondary .btn__arrow,
+.btn--ghost-dark .btn__arrow {
+  width: auto !important;
+  height: auto !important;
+  min-width: 0 !important;
+
+  display: inline-block !important;
+
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: currentColor !important;
+
+  font-size: 1em !important;
+  line-height: 1 !important;
+}
+
+/* 4. Materia prima: todos cerrados y se abren con hover en desktop */
+
+@media (hover: hover) and (pointer: fine) and (min-width: 641px) {
+  .wood-panel,
+  .wood-panel.is-active {
+    flex: 0.6 !important;
+    filter: saturate(0.7) brightness(0.68);
+  }
+
+  .wood-panel .wood-panel__content,
+  .wood-panel.is-active .wood-panel__content {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(18px) !important;
+    transition:
+      opacity 0.4s var(--ease),
+      transform 0.5s var(--ease),
+      visibility 0s linear 0.5s;
+  }
+
+  .wood-panel .wood-panel__number,
+  .wood-panel .wood-panel__vertical-name,
+  .wood-panel.is-active .wood-panel__number,
+  .wood-panel.is-active .wood-panel__vertical-name {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  .wood-panel:hover,
+  .wood-panel.is-active:hover {
+    flex: 2.4 !important;
+    filter: saturate(1) brightness(0.88);
+  }
+
+  .wood-panel:hover .wood-panel__content,
+  .wood-panel.is-active:hover .wood-panel__content {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+    transition-delay: 0.2s;
+  }
+
+  .wood-panel:hover .wood-panel__number,
+  .wood-panel:hover .wood-panel__vertical-name,
+  .wood-panel.is-active:hover .wood-panel__number,
+  .wood-panel.is-active:hover .wood-panel__vertical-name {
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+}
+
+/* Mobile: mantiene apertura por click/tap */
+
+@media (max-width: 640px) {
+  .wood-panel.is-active {
+    min-height: 430px !important;
+  }
+
+  .wood-panel.is-active .wood-panel__content {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+  }
+
+  .wood-panel.is-active .wood-panel__number,
+  .wood-panel.is-active .wood-panel__vertical-name {
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+}
+
+/* ============================================================
+   FOOTER — VERDE DEL SISTEMA
+   ============================================================ */
+
+.footer {
+  background:
+    linear-gradient(
+      135deg,
+      var(--color-workshop-green-dark) 0%,
+      var(--color-workshop-green) 52%,
+      #071B17 100%
+    ) !important;
+
+  color: var(--color-cream-soft) !important;
+}
+
+.footer__logo {
+  color: var(--color-cream-soft) !important;
+}
+
+.footer__tagline {
+  color: rgba(250, 245, 234, 0.76) !important;
+}
+
+.footer__heading {
+  color: var(--color-sound-yellow) !important;
+}
+
+.footer__col a,
+.footer__col span,
+.footer__bottom {
+  color: rgba(250, 245, 234, 0.64) !important;
+}
+
+.footer__col a:hover {
+  color: var(--color-cream-soft) !important;
+}
+
+.footer__top,
+.footer__bottom {
+  border-color: rgba(250, 245, 234, 0.14) !important;
+}
+/* ============================================================
+}
+
+/* ============================================================
+   HERO HOME — VERSIÓN FINAL LIMPIA
+   Split verde + imagen, sin superposición de datos
+   ============================================================ */
+
+:root {
+  --color-workshop-green-dark: #062D27;
+  --color-cream-soft: var(--color-warm-white, #FAF8F2);
+  --hero-left-width: 52vw;
+  --hero-image-width: 48vw;
+}
+
+/* Oculta la marquee si quedó en el HTML */
+.marquee {
+  display: none !important;
+}
+
+.hero {
+  position: relative !important;
+
+  width: 100% !important;
+  height: 100vh !important;
+  height: 100svh !important;
+  min-height: 720px !important;
+
+  display: grid !important;
+  grid-template-columns: minmax(560px, var(--hero-left-width)) minmax(0, 1fr) !important;
+  align-items: stretch !important;
+
+  overflow: hidden !important;
+
+  background: var(--color-workshop-green-dark) !important;
+  color: var(--color-cream-soft) !important;
+}
+
+/* Panel verde izquierdo */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  z-index: 0;
+
+  width: var(--hero-left-width);
+
+  background:
+    radial-gradient(
+      circle at 14% 78%,
+      rgba(217, 147, 0, 0.14),
+      transparent 34%
+    ),
+    linear-gradient(
+      135deg,
+      var(--color-workshop-green-dark) 0%,
+      var(--color-workshop-green) 58%,
+      #071B17 100%
+    );
+
+  pointer-events: none;
+}
+
+/* Columna de texto: queda siempre dentro del bloque verde */
+.hero__content {
+  position: relative !important;
+  z-index: 2 !important;
+  grid-column: 1 !important;
+
+  width: 100% !important;
+  max-width: none !important;
+  min-height: 100% !important;
+  margin: 0 !important;
+
+  padding:
+    clamp(6.8rem, 10vh, 8.5rem)
+    clamp(3rem, 4.8vw, 5.5rem)
+    clamp(3rem, 5vh, 4.5rem) !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+
+  overflow: visible !important;
+}
+
+/* Imagen derecha: nunca queda debajo del texto */
+.hero__media {
+  position: relative !important;
+  z-index: 1 !important;
+  grid-column: 2 !important;
+
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 100% !important;
+
+  overflow: hidden !important;
+
+  background: var(--color-sound-yellow) !important;
+}
+
+.hero__img {
+  width: 100% !important;
+  height: 100% !important;
+
+  display: block !important;
+
+  object-fit: cover !important;
+  object-position: 58% center !important;
+
+  transform: scale(1.08) translate3d(0, 0, 0) !important;
+  transform-origin: 55% center !important;
+
+  animation: heroImageDrift 8s ease-in-out infinite alternate !important;
+  will-change: transform !important;
+}
+
+/* Profundidad sobre la imagen, sin taparla */
+.hero__overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 2 !important;
+
+  pointer-events: none !important;
+
+  background:
+    radial-gradient(
+      circle at 60% 42%,
+      rgba(250, 245, 234, 0.12),
+      transparent 32%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(6, 45, 39, 0.24) 0%,
+      rgba(6, 45, 39, 0.08) 22%,
+      rgba(6, 45, 39, 0) 48%
+    ) !important;
+}
+
+.hero__title {
+  width: 100% !important;
+  max-width: 10.6ch !important;
+  margin: 0 !important;
+
+  font-family: var(--font-display) !important;
+  font-size: clamp(5rem, 6.35vw, 7.15rem) !important;
+  font-weight: 700 !important;
+  line-height: 0.9 !important;
+  letter-spacing: -0.055em !important;
+  text-transform: none !important;
+
+  color: var(--color-cream-soft) !important;
+}
+
+.hero__title-line {
+  display: block !important;
+  width: 100% !important;
+  white-space: nowrap !important;
+}
+
+.hero__title-line + .hero__title-line {
+  margin-top: 0.06em !important;
+}
+
+.hero__title em {
+  display: inline !important;
+  font-style: italic !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.055em !important;
+}
+
+.hero__subtitle {
+  max-width: 29ch !important;
+  margin-top: clamp(1.4rem, 2.2vw, 2rem) !important;
+
+  font-family: var(--font-body) !important;
+  font-size: clamp(1rem, 1.18vw, 1.22rem) !important;
+  font-weight: 650 !important;
+  line-height: 1.28 !important;
+  letter-spacing: -0.02em !important;
+
+  color: rgba(250, 245, 234, 0.88) !important;
+}
+
+.hero__actions {
+  display: flex !important;
+  align-items: center !important;
+  margin-top: clamp(1.65rem, 2.7vw, 2.4rem) !important;
+}
+
+.hero__cta,
+.hero .btn--primary {
+  width: fit-content !important;
+  background: var(--color-sound-yellow) !important;
+  border-color: var(--color-sound-yellow) !important;
+  color: var(--color-deep-brown) !important;
+  box-shadow: 0 18px 42px rgba(217, 147, 0, 0.22) !important;
+}
+
+.hero__cta:hover,
+.hero .btn--primary:hover {
+  background: var(--color-cream-soft) !important;
+  border-color: var(--color-cream-soft) !important;
+  color: var(--color-workshop-green) !important;
+}
+
+.hero__content::after {
+  content: "TRS-HOME / MADERA · MANOS · SONIDO";
+
+  display: block;
+  margin-top: clamp(2rem, 4.8vh, 3.8rem);
+
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  line-height: 1.4;
+  text-transform: uppercase;
+
+  color: rgba(250, 245, 234, 0.58);
+}
+
+.hero__scroll-cue {
+  display: none !important;
+}
+
+@keyframes heroImageDrift {
+  0% {
+    transform: scale(1.08) translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: scale(1.14) translate3d(-18px, -10px, 0);
+  }
+}
+
+/* Header sobre hero */
+.header {
+  mix-blend-mode: normal !important;
+}
+
+.header:not(.is-scrolled) .logo,
+.header:not(.is-scrolled) .nav__link,
+.header:not(.is-scrolled) .nav__cta {
+  color: var(--color-cream-soft) !important;
+}
+
+.header:not(.is-scrolled) .nav__cta {
+  border-color: rgba(250, 245, 234, 0.55) !important;
+}
+
+/* Ajuste para pantallas medianas: no se pisan título e imagen */
+@media (max-width: 1180px) {
+  :root {
+    --hero-left-width: 54vw;
+  }
+
+  .hero {
+    grid-template-columns: minmax(520px, var(--hero-left-width)) minmax(0, 1fr) !important;
+  }
+
+  .hero__title {
+    font-size: clamp(4.2rem, 6vw, 6.25rem) !important;
+  }
+
+  .hero__img {
+    object-position: 62% center !important;
+  }
+}
+
+/* Tablet / mobile: pasa a hero con imagen de fondo y texto arriba */
+@media (max-width: 900px) {
+  .hero {
+    height: 100svh !important;
+    min-height: 680px !important;
+
+    display: block !important;
+    background: var(--color-workshop-green-dark) !important;
+  }
+
+  .hero::before {
+    width: 100% !important;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(6, 45, 39, 0.9) 0%,
+        rgba(6, 45, 39, 0.58) 50%,
+        rgba(6, 45, 39, 0.86) 100%
+      ) !important;
+    z-index: 1 !important;
+  }
+
+  .hero__media {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .hero__img {
+    object-position: 64% center !important;
+    animation: heroImageDriftMobile 9s ease-in-out infinite alternate !important;
+  }
+
+  .hero__overlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(6, 45, 39, 0.82) 0%,
+        rgba(6, 45, 39, 0.28) 48%,
+        rgba(6, 45, 39, 0.9) 100%
+      ) !important;
+  }
+
+  .hero__content {
+    width: 100% !important;
+    min-height: 100% !important;
+
+    padding:
+      7rem
+      var(--container-pad)
+      3rem !important;
+
+    justify-content: center !important;
+  }
+
+  .hero__title {
+    max-width: 9.5ch !important;
+    font-size: clamp(3.4rem, 13vw, 5.4rem) !important;
+  }
+
+  .hero__title-line {
+    white-space: normal !important;
+  }
+
+  .hero__subtitle {
+    max-width: 27ch !important;
+    font-size: clamp(0.98rem, 3.6vw, 1.2rem) !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero {
+    min-height: 640px !important;
+  }
+
+  .hero__content {
+    padding:
+      6.5rem
+      1.25rem
+      2.25rem !important;
+  }
+
+  .hero__title {
+    max-width: 9ch !important;
+    font-size: clamp(2.75rem, 12vw, 3.7rem) !important;
+    line-height: 0.92 !important;
+  }
+
+  .hero__subtitle {
+    max-width: 24ch !important;
+  }
+
+  .hero__content::after {
+    margin-top: 2rem;
+    font-size: 0.56rem;
+    letter-spacing: 0.16em;
+  }
+}
+
+@keyframes heroImageDriftMobile {
+  0% {
+    transform: scale(1.08) translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: scale(1.13) translate3d(-10px, -8px, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__img {
+    animation: none !important;
+    transform: scale(1.08) !important;
+  }
+}
+/* ============================================================
+   FIX HERO HOME — SPLIT REAL SIN QUE SE ROMPA LA IMAGEN
+   Pegarlo último de todo en style.css
+   ============================================================ */
+
+:root {
+  --hero-left-width: 52vw;
+  --hero-green-dark: #062D27;
+  --hero-green: #173D35;
+  --hero-cream: #FAF8F2;
+}
+
+/* Hero a pantalla completa */
+.hero {
+  position: relative !important;
+
+  width: 100% !important;
+  height: 100vh !important;
+  height: 100svh !important;
+  min-height: 720px !important;
+
+  display: block !important;
+  overflow: hidden !important;
+
+  background: var(--hero-green-dark) !important;
+  color: var(--hero-cream) !important;
+}
+
+/* Bloque verde izquierdo */
+.hero::before {
+  content: "" !important;
+
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  bottom: 0 !important;
+  z-index: 0 !important;
+
+  width: var(--hero-left-width) !important;
+
+  background:
+    radial-gradient(
+      circle at 14% 78%,
+      rgba(217, 147, 0, 0.15),
+      transparent 34%
+    ),
+    linear-gradient(
+      135deg,
+      var(--hero-green-dark) 0%,
+      var(--hero-green) 58%,
+      #071B17 100%
+    ) !important;
+
+  pointer-events: none !important;
+}
+
+/* Imagen derecha: ocupa toda la altura, no queda arriba */
+.hero__media {
+  position: absolute !important;
+
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: var(--hero-left-width) !important;
+
+  z-index: 1 !important;
+
+  width: auto !important;
+  height: auto !important;
+  min-height: 0 !important;
+
+  overflow: hidden !important;
+
+  background: var(--color-sound-yellow, #D99300) !important;
+}
+
+/* Imagen con movimiento real */
+.hero__img {
+  position: absolute !important;
+  inset: 0 !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  display: block !important;
+
+  object-fit: cover !important;
+  object-position: 63% center !important;
+
+  transform: scale(1.08) translate3d(0, 0, 0) !important;
+  transform-origin: 58% center !important;
+
+  animation: heroImageDriftFixed 8s ease-in-out infinite alternate !important;
+  will-change: transform !important;
+}
+
+/* Overlay solo sobre la imagen */
+.hero__overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 2 !important;
+
+  pointer-events: none !important;
+
+  background:
+    radial-gradient(
+      circle at 62% 42%,
+      rgba(250, 245, 234, 0.14),
+      transparent 34%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(6, 45, 39, 0.26) 0%,
+      rgba(6, 45, 39, 0.08) 22%,
+      rgba(6, 45, 39, 0) 50%
+    ) !important;
+}
+
+/* Contenido: vive solo dentro del bloque verde */
+.hero__content {
+  position: relative !important;
+  z-index: 3 !important;
+
+  width: var(--hero-left-width) !important;
+  max-width: none !important;
+  min-height: 100% !important;
+
+  margin: 0 !important;
+
+  padding:
+    clamp(6.8rem, 10vh, 8.5rem)
+    clamp(3.2rem, 5vw, 5.8rem)
+    clamp(3rem, 5vh, 4.5rem)
+    clamp(3.2rem, 5vw, 5.8rem) !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+
+  overflow: visible !important;
+}
+
+/* Título contenido: no pisa imagen */
+.hero__title {
+  width: 100% !important;
+  max-width: 9.6ch !important;
+
+  margin: 0 !important;
+
+  font-family: var(--font-display) !important;
+  font-size: clamp(4.8rem, 6.1vw, 7rem) !important;
+  font-weight: 700 !important;
+  line-height: 0.92 !important;
+  letter-spacing: -0.055em !important;
+  text-transform: none !important;
+
+  color: var(--hero-cream) !important;
+}
+
+.hero__title-line {
+  display: block !important;
+  width: 100% !important;
+  white-space: nowrap !important;
+}
+
+.hero__title-line + .hero__title-line {
+  margin-top: 0.08em !important;
+}
+
+.hero__title em {
+  display: inline !important;
+  font-style: italic !important;
+  font-weight: 700 !important;
+}
+
+/* Bajada */
+.hero__subtitle {
+  max-width: 29ch !important;
+
+  margin-top: clamp(1.4rem, 2.2vw, 2rem) !important;
+
+  font-size: clamp(1rem, 1.15vw, 1.22rem) !important;
+  font-weight: 650 !important;
+  line-height: 1.28 !important;
+  letter-spacing: -0.02em !important;
+
+  color: rgba(250, 245, 234, 0.88) !important;
+}
+
+/* CTA */
+.hero__actions {
+  display: flex !important;
+  align-items: center !important;
+
+  margin-top: clamp(1.65rem, 2.7vw, 2.4rem) !important;
+}
+
+.hero__cta,
+.hero .btn--primary {
+  width: fit-content !important;
+
+  background: var(--color-sound-yellow, #D99300) !important;
+  border-color: var(--color-sound-yellow, #D99300) !important;
+  color: var(--color-deep-brown, #2A160E) !important;
+
+  box-shadow: 0 18px 42px rgba(217, 147, 0, 0.22) !important;
+}
+
+/* Microcopy inferior */
+.hero__content::after {
+  content: "TRS-HOME / MADERA · MANOS · SONIDO" !important;
+
+  display: block !important;
+
+  margin-top: clamp(2rem, 4.8vh, 3.8rem) !important;
+
+  font-size: 0.62rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.2em !important;
+  line-height: 1.4 !important;
+  text-transform: uppercase !important;
+
+  color: rgba(250, 245, 234, 0.58) !important;
+}
+
+/* Animación */
+@keyframes heroImageDriftFixed {
+  0% {
+    transform: scale(1.08) translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: scale(1.14) translate3d(-18px, -10px, 0);
+  }
+}
+
+/* Header arriba */
+.header {
+  z-index: 100 !important;
+}
+
+/* Mobile/tablet */
+@media (max-width: 900px) {
+  :root {
+    --hero-left-width: 100%;
+  }
+
+  .hero {
+    height: 100svh !important;
+    min-height: 680px !important;
+  }
+
+  .hero::before {
+    width: 100% !important;
+    z-index: 2 !important;
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(6, 45, 39, 0.88) 0%,
+        rgba(6, 45, 39, 0.42) 48%,
+        rgba(6, 45, 39, 0.9) 100%
+      ) !important;
+  }
+
+  .hero__media {
+    inset: 0 !important;
+    z-index: 1 !important;
+  }
+
+  .hero__img {
+    object-position: 64% center !important;
+  }
+
+  .hero__content {
+    width: 100% !important;
+    min-height: 100% !important;
+
+    padding:
+      7rem
+      var(--container-pad)
+      3rem !important;
+  }
+
+  .hero__title {
+    max-width: 9.5ch !important;
+    font-size: clamp(3.4rem, 13vw, 5.4rem) !important;
+  }
+
+  .hero__title-line {
+    white-space: normal !important;
+  }
+
+  .hero__subtitle {
+    max-width: 27ch !important;
+  }
+}
+/* ============================================================
+   AJUSTE HERO HOME — BLOQUE VERDE MÁS ANGOSTO + ANIMACIÓN VISIBLE
+   Pegar último de todo
+   ============================================================ */
+
+:root {
+  --hero-left-width: 46vw;
+}
+
+/* El verde termina más a la izquierda */
+.hero::before {
+  width: var(--hero-left-width) !important;
+}
+
+/* La imagen empieza antes, así gana más presencia */
+.hero__media {
+  left: var(--hero-left-width) !important;
+  right: 0 !important;
+  top: 0 !important;
+  bottom: 0 !important;
+
+  transform-origin: center center !important;
+  animation: heroMediaFloatVisible 7s ease-in-out infinite alternate !important;
+  will-change: transform !important;
+}
+
+/* La columna de texto acompaña el nuevo ancho */
+.hero__content {
+  width: var(--hero-left-width) !important;
+}
+
+/* Ajuste para que el título siga entrando cómodo dentro del verde */
+.hero__title {
+  max-width: 8.8ch !important;
+  font-size: clamp(4.5rem, 5.7vw, 6.6rem) !important;
+}
+
+/* La imagen se reencuadra para que la guitarra sea más protagonista */
+.hero__img {
+  object-fit: cover !important;
+  object-position: 58% center !important;
+}
+
+/* Movimiento visible: animamos el contenedor de la imagen,
+   no la imagen, porque el transform de .hero__img estaba pisado */
+@keyframes heroMediaFloatVisible {
+  0% {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: scale(1.035) translate3d(-18px, -8px, 0);
+  }
+}
+/* ============================================================
+   HOME HERO — TÍTULO MÁS PROTAGONISTA
+   ============================================================ */
+
+:root {
+  /* Mantiene el verde un poco antes de la mitad */
+  --hero-left-width: 46vw;
+}
+
+/* Más aire interno para que el título grande no toque el corte */
+.hero__content {
+  padding-left: clamp(3.4rem, 5.2vw, 6.2rem) !important;
+  padding-right: clamp(2rem, 3vw, 3.2rem) !important;
+}
+
+/* Título más grande, pero contenido dentro del bloque verde */
+.hero__title {
+  max-width: 9.8ch !important;
+
+  font-size: clamp(5.2rem, 6.65vw, 8.1rem) !important;
+  line-height: 0.88 !important;
+  letter-spacing: -0.058em !important;
+}
+
+/* Evita que vuelva a partir “Instrumentos” */
+.hero__title-line {
+  white-space: nowrap !important;
+}
+
+/* La segunda línea puede ser un poco más editorial */
+.hero__title-line + .hero__title-line {
+  margin-top: 0.03em !important;
+}
+
+.hero__title em {
+  font-style: italic !important;
+}
+
+/* Un poco más de presencia de imagen */
+.hero__img {
+  object-position: 57% center !important;
+}
+/* ============================================================
+   HOME HERO — transición suave entre verde e imagen
+   ============================================================ */
+
+:root {
+  /* El contenido sigue viviendo en el verde */
+  --hero-left-width: 45vw;
+
+  /* La imagen empieza antes, por debajo del verde */
+  --hero-image-start: 38vw;
+}
+
+/* Hero base */
+.hero {
+  background: var(--color-workshop-green-dark, #09261F) !important;
+}
+
+/* Capa verde superior con fundido hacia la imagen */
+.hero::before {
+  content: "" !important;
+  display: block !important;
+
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  bottom: 0 !important;
+  z-index: 2 !important;
+
+  width: 58vw !important;
+
+  pointer-events: none !important;
+
+  background:
+    radial-gradient(
+      circle at 18% 72%,
+      rgba(217, 147, 0, 0.14),
+      transparent 36%
+    ),
+    linear-gradient(
+      100deg,
+      #062D27 0%,
+      #09261F 56%,
+      rgba(9, 38, 31, 0.92) 68%,
+      rgba(9, 38, 31, 0.62) 78%,
+      rgba(9, 38, 31, 0.24) 90%,
+      rgba(9, 38, 31, 0) 100%
+    ) !important;
+}
+
+/* La imagen entra por debajo del verde */
+.hero__media {
+  left: var(--hero-image-start) !important;
+  right: 0 !important;
+  top: 0 !important;
+  bottom: 0 !important;
+
+  z-index: 1 !important;
+
+  overflow: hidden !important;
+
+  animation: heroMediaBreathSoft 8s ease-in-out infinite alternate !important;
+  transform-origin: center center !important;
+  will-change: transform !important;
+}
+
+/* Imagen: un poco más abierta para que no se corte tanto */
+.hero__img {
+  object-fit: cover !important;
+  object-position: 58% center !important;
+
+  transform: scale(1.04) !important;
+  animation: none !important;
+}
+
+/* Overlay cálido sobre la foto, sin corte duro */
+.hero__overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+
+  pointer-events: none !important;
+
+  background:
+    radial-gradient(
+      circle at 70% 42%,
+      rgba(250, 245, 234, 0.12),
+      transparent 34%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(9, 38, 31, 0.18) 0%,
+      rgba(9, 38, 31, 0.06) 28%,
+      rgba(9, 38, 31, 0) 58%
+    ) !important;
+}
+
+/* El texto queda siempre por arriba del fundido */
+.hero__content {
+  width: var(--hero-left-width) !important;
+  z-index: 4 !important;
+}
+
+/* Animación visible pero suave */
+@keyframes heroMediaBreathSoft {
+  0% {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: scale(1.025) translate3d(-10px, -5px, 0);
+  }
+}
+/* ============================================================
+   HOME HERO — FIX FINAL LIMPIO
+   Imagen full bleed + fundido verde suave + título con aire
+   PEGAR ÚLTIMO DE TODO
+   ============================================================ */
+
+:root {
+  --home-hero-green: #062D27;
+  --home-hero-green-soft: #173D35;
+  --home-hero-cream: #FAF8F2;
+
+  /* Ancho real reservado para texto */
+  --home-hero-content-width: 48vw;
+
+  /* El degradado se extiende más que el texto para evitar corte duro */
+  --home-hero-fade-width: 64vw;
+}
+
+/* HERO BASE */
+.hero {
+  position: relative !important;
+
+  width: 100% !important;
+  height: 100vh !important;
+  height: 100svh !important;
+  min-height: 720px !important;
+
+  display: block !important;
+  overflow: hidden !important;
+
+  background: var(--home-hero-green) !important;
+  color: var(--home-hero-cream) !important;
+
+  isolation: isolate !important;
+}
+
+/* Eliminamos marcas viejas heredadas */
+.hero::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* FOTO FULL BLEED: ocupa todo el hero, no empieza en una columna */
+.hero__media {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+
+  overflow: hidden !important;
+
+  background: var(--color-sound-yellow, #D99300) !important;
+
+  transform: none !important;
+  animation: none !important;
+}
+
+/* Imagen con movimiento visible */
+.hero__img {
+  position: absolute !important;
+  inset: 0 !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  display: block !important;
+
+  object-fit: cover !important;
+  object-position: 68% center !important;
+
+  transform: scale(1.035) translate3d(0, 0, 0) !important;
+  transform-origin: 62% center !important;
+
+  animation: homeHeroImageMoveFinal 9s ease-in-out infinite alternate !important;
+  will-change: transform !important;
+}
+
+/* Fundido verde sobre la imagen: ya no hay corte rectangular */
+.hero::before {
+  content: "" !important;
+  display: block !important;
+
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  bottom: 0 !important;
+  z-index: 1 !important;
+
+  width: var(--home-hero-fade-width) !important;
+  height: auto !important;
+
+  border: 0 !important;
+  border-right: 0 !important;
+  border-bottom: 0 !important;
+  outline: 0 !important;
+
+  pointer-events: none !important;
+
+  background:
+    radial-gradient(
+      circle at 18% 72%,
+      rgba(217, 147, 0, 0.16),
+      transparent 36%
+    ),
+    linear-gradient(
+      100deg,
+      var(--home-hero-green) 0%,
+      var(--home-hero-green) 44%,
+      rgba(6, 45, 39, 0.92) 58%,
+      rgba(6, 45, 39, 0.66) 72%,
+      rgba(6, 45, 39, 0.28) 88%,
+      rgba(6, 45, 39, 0) 100%
+    ) !important;
+}
+
+/* Overlay extra sobre la foto, sin líneas ni bordes */
+.hero__overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 2 !important;
+
+  border: 0 !important;
+  outline: 0 !important;
+
+  pointer-events: none !important;
+
+  background:
+    radial-gradient(
+      circle at 72% 42%,
+      rgba(250, 245, 234, 0.12),
+      transparent 34%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(6, 45, 39, 0.12) 0%,
+      rgba(6, 45, 39, 0.04) 34%,
+      rgba(6, 45, 39, 0) 62%
+    ) !important;
+}
+
+/* CONTENIDO: con más aire derecho para que no toque el límite */
+.hero__content {
+  position: relative !important;
+  z-index: 3 !important;
+
+  width: var(--home-hero-content-width) !important;
+  max-width: none !important;
+  min-height: 100% !important;
+
+  margin: 0 !important;
+
+  padding:
+    clamp(6.8rem, 10vh, 8.5rem)
+    clamp(3.8rem, 5vw, 6.2rem)
+    clamp(3rem, 5vh, 4.5rem)
+    clamp(4.2rem, 5.4vw, 6.4rem) !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+
+  overflow: visible !important;
+}
+
+/* TÍTULO: más aire y sin tocar la transición */
+.hero__title {
+  width: 100% !important;
+  max-width: 8.9ch !important;
+
+  margin: 0 !important;
+
+  font-family: var(--font-display) !important;
+  font-size: clamp(4.8rem, 5.8vw, 7.15rem) !important;
+  font-weight: 700 !important;
+  line-height: 0.88 !important;
+  letter-spacing: -0.055em !important;
+  text-transform: none !important;
+
+  color: var(--home-hero-cream) !important;
+}
+
+.hero__title-line {
+  display: block !important;
+  width: 100% !important;
+  white-space: nowrap !important;
+}
+
+.hero__title-line + .hero__title-line {
+  margin-top: 0.05em !important;
+}
+
+.hero__title em {
+  display: inline !important;
+  font-style: italic !important;
+  font-weight: 700 !important;
+}
+
+/* BAJADA */
+.hero__subtitle {
+  max-width: 29ch !important;
+
+  margin-top: clamp(1.4rem, 2.2vw, 2rem) !important;
+
+  font-family: var(--font-body) !important;
+  font-size: clamp(1rem, 1.15vw, 1.22rem) !important;
+  font-weight: 650 !important;
+  line-height: 1.28 !important;
+  letter-spacing: -0.02em !important;
+
+  color: rgba(250, 245, 234, 0.9) !important;
+}
+
+/* CTA */
+.hero__actions {
+  display: flex !important;
+  align-items: center !important;
+
+  margin-top: clamp(1.65rem, 2.7vw, 2.4rem) !important;
+}
+
+.hero__cta,
+.hero .btn--primary {
+  width: fit-content !important;
+
+  background: var(--color-sound-yellow, #D99300) !important;
+  border-color: var(--color-sound-yellow, #D99300) !important;
+  color: var(--color-deep-brown, #2A160E) !important;
+
+  box-shadow: 0 18px 42px rgba(217, 147, 0, 0.22) !important;
+}
+
+.hero__cta:hover,
+.hero .btn--primary:hover {
+  background: var(--home-hero-cream) !important;
+  border-color: var(--home-hero-cream) !important;
+  color: var(--color-workshop-green, #173D35) !important;
+}
+
+/* Microcopy inferior */
+.hero__content::after {
+  content: "TRS-HOME / MADERA · MANOS · SONIDO" !important;
+
+  display: block !important;
+
+  margin-top: clamp(2rem, 4.8vh, 3.8rem) !important;
+
+  font-family: var(--font-body) !important;
+  font-size: 0.62rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.2em !important;
+  line-height: 1.4 !important;
+  text-transform: uppercase !important;
+
+  color: rgba(250, 245, 234, 0.58) !important;
+}
+
+/* Animación real de la imagen */
+@keyframes homeHeroImageMoveFinal {
+  0% {
+    transform: scale(1.035) translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: scale(1.075) translate3d(-16px, -8px, 0);
+  }
+}
+
+/* Header por encima */
+.header {
+  z-index: 100 !important;
+}
+
+/* MOBILE / TABLET */
+@media (max-width: 900px) {
+  :root {
+    --home-hero-content-width: 100%;
+    --home-hero-fade-width: 100%;
+  }
+
+  .hero {
+    height: 100svh !important;
+    min-height: 680px !important;
+  }
+
+  .hero::before {
+    width: 100% !important;
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(6, 45, 39, 0.9) 0%,
+        rgba(6, 45, 39, 0.52) 48%,
+        rgba(6, 45, 39, 0.9) 100%
+      ) !important;
+  }
+
+  .hero__img {
+    object-position: 64% center !important;
+  }
+
+  .hero__content {
+    width: 100% !important;
+    min-height: 100% !important;
+
+    padding:
+      7rem
+      var(--container-pad, 1.25rem)
+      3rem !important;
+  }
+
+  .hero__title {
+    max-width: 9.5ch !important;
+    font-size: clamp(3.4rem, 13vw, 5.4rem) !important;
+  }
+
+  .hero__title-line {
+    white-space: normal !important;
+  }
+
+  .hero__subtitle {
+    max-width: 27ch !important;
+  }
+}
+.contact .eyebrow::before {
+  content: none !important;
+  display: none !important;
+}
+
+.contact .eyebrow {
+  justify-content: center;
+  gap: 0;
+}
+/* HERO */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  overflow: hidden;
+  background: #0a2f29;
+  color: #f7f4ed;
+}
+
+.hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 72% center;
+  display: block;
+  transform: scale(1.04);
+  animation: heroFloat 10s ease-in-out infinite alternate;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8, 28, 24, 0.42) 0%,
+      rgba(8, 28, 24, 0.18) 28%,
+      rgba(8, 28, 24, 0.06) 55%,
+      rgba(8, 28, 24, 0.1) 100%
+    );
+}
+
+/* CONTENIDO */
+.hero__content {
+  position: relative;
+  z-index: 2;
+
+  width: min(44vw, 640px);
+  min-height: calc(100vh - 4rem);
+
+  margin: 2rem 0 2rem 4rem;
+  padding: clamp(2.5rem, 4vw, 4rem);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  border-radius: 0 40px 0 0;
+  border: 1px solid rgba(247, 244, 237, 0.14);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(6, 45, 39, 0.82) 0%,
+      rgba(13, 56, 48, 0.72) 52%,
+      rgba(35, 73, 66, 0.46) 100%
+    );
+
+  backdrop-filter: blur(18px) saturate(110%);
+  -webkit-backdrop-filter: blur(18px) saturate(110%);
+
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+/* brillo / textura tipo vidriado */
+.hero__content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 20% 25%,
+      rgba(255, 255, 255, 0.08),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 78% 75%,
+      rgba(255, 255, 255, 0.05),
+      transparent 24%
+    ),
+    linear-gradient(
+      115deg,
+      rgba(255, 255, 255, 0.06) 0%,
+      rgba(255, 255, 255, 0.02) 32%,
+      transparent 55%
+    );
+}
+
+.hero__content > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hero__title {
+  max-width: 8.5ch;
+  margin: 0;
+  font-size: clamp(4.6rem, 6vw, 7rem);
+  line-height: 0.9;
+}
+
+.hero__subtitle {
+  max-width: 28ch;
+  margin-top: 1.5rem;
+  font-size: clamp(1rem, 1.15vw, 1.2rem);
+  line-height: 1.3;
+}
+
+.hero__actions {
+  margin-top: 2rem;
+}
+
+@keyframes heroFloat {
+  0% {
+    transform: scale(1.04) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: scale(1.08) translate3d(-14px, -6px, 0);
+  }
+}
+/* ============================================================
+   CONTACTO — CENTRADO REAL
+   ============================================================ */
+
+.contact__inner {
+  width: min(100%, 720px);
+  margin-inline: auto;
+  text-align: center;
+}
+
+.contact__inner .eyebrow {
+  display: block !important;
+  width: fit-content;
+  margin: 0 auto 0.75rem !important;
+}
+
+/* Elimina la línea amarilla únicamente en Contacto */
+.contact__inner .eyebrow::before,
+.contact__inner .eyebrow::after {
+  content: none !important;
+  display: none !important;
+}
+
+.contact__title {
+  width: 100%;
+  max-width: 18ch;
+  margin-inline: auto !important;
+  text-align: center;
+}
+
+.contact__copy {
+  width: 100%;
+  max-width: 54ch;
+  margin: var(--space-sm) auto 0;
+  text-align: center;
+}
+
+.contact__actions {
+  width: 100%;
+  justify-content: center;
+  margin-inline: auto;
+}
+/* ============================================================
+   HERO HOME — AJUSTE FINAL
+   Rectángulo vidriado más angosto + imagen full bleed
+   Este bloque pisa todos los hero anteriores.
+   ============================================================ */
+
+:root {
+  --home-glass-width: min(41.5vw, 650px);
+  --home-glass-green-dark: #062D27;
+  --home-glass-green: #173D35;
+  --home-hero-cream: #FAF8F2;
+}
+
+/* La marquee queda anulada si todavía existe en el HTML */
+.marquee {
+  display: none !important;
+}
+
+/* Hero base: imagen a pantalla completa */
+.hero {
+  position: relative !important;
+
+  width: 100% !important;
+  height: 100vh !important;
+  height: 100svh !important;
+  min-height: 720px !important;
+
+  display: block !important;
+  overflow: hidden !important;
+
+  background: var(--home-glass-green-dark) !important;
+  color: var(--home-hero-cream) !important;
+
+  isolation: isolate !important;
+}
+
+/* Sacamos fondos/degradados viejos del hero */
+.hero::before,
+.hero::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Imagen full bleed */
+.hero__media {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+
+  overflow: hidden !important;
+
+  background: var(--color-sound-yellow, #D99300) !important;
+
+  transform: none !important;
+  animation: none !important;
+}
+
+/* Imagen con movimiento visible */
+.hero__img {
+  position: absolute !important;
+  inset: 0 !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+
+  object-fit: cover !important;
+  object-position: 72% center !important;
+
+  transform: scale(1.035) translate3d(0, 0, 0) !important;
+  transform-origin: 66% center !important;
+
+  animation: homeHeroGlassImageMove 10s ease-in-out infinite alternate !important;
+  will-change: transform !important;
+}
+
+/* Oscurecimiento suave general para lectura, sin corte duro */
+.hero__overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+
+  pointer-events: none !important;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(6, 28, 24, 0.26) 0%,
+      rgba(6, 28, 24, 0.12) 32%,
+      rgba(6, 28, 24, 0.04) 58%,
+      rgba(6, 28, 24, 0.08) 100%
+    ) !important;
+}
+
+/* Rectángulo vidriado: más angosto para no pisar la foto */
+.hero__content {
+  position: relative !important;
+  z-index: 3 !important;
+
+  width: var(--home-glass-width) !important;
+  max-width: var(--home-glass-width) !important;
+  min-height: 100% !important;
+
+  margin: 0 !important;
+
+  padding:
+    clamp(6.8rem, 10vh, 8.5rem)
+    clamp(2.1rem, 3vw, 3.35rem)
+    clamp(3rem, 5vh, 4.5rem)
+    clamp(3.6rem, 5vw, 5.6rem) !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+
+  overflow: hidden !important;
+
+  border-radius: 0 42px 0 0 !important;
+  border-right: 1px solid rgba(250, 245, 234, 0.14) !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(6, 45, 39, 0.86) 0%,
+      rgba(13, 56, 48, 0.76) 52%,
+      rgba(42, 80, 72, 0.46) 100%
+    ) !important;
+
+  backdrop-filter: blur(18px) saturate(112%) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(112%) !important;
+
+  box-shadow:
+    24px 0 70px rgba(0, 0, 0, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07) !important;
+
+  isolation: isolate !important;
+}
+
+/* Brillo/textura de vidrio */
+.hero__content::before {
+  content: "" !important;
+
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+
+  display: block !important;
+  border-radius: inherit !important;
+  pointer-events: none !important;
+
+  background:
+    radial-gradient(
+      circle at 18% 18%,
+      rgba(255, 255, 255, 0.09),
+      transparent 27%
+    ),
+    radial-gradient(
+      circle at 82% 76%,
+      rgba(255, 255, 255, 0.06),
+      transparent 25%
+    ),
+    linear-gradient(
+      115deg,
+      rgba(255, 255, 255, 0.07) 0%,
+      rgba(255, 255, 255, 0.025) 34%,
+      transparent 58%
+    ) !important;
+}
+
+/* Todo el contenido queda por encima del brillo */
+.hero__content > * {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Título contenido dentro de la caja angosta */
+.hero__title {
+  width: 100% !important;
+  max-width: 8.6ch !important;
+
+  margin: 0 !important;
+
+  font-family: var(--font-display) !important;
+  font-size: clamp(4.5rem, 5.75vw, 6.8rem) !important;
+  font-weight: 700 !important;
+  line-height: 0.88 !important;
+  letter-spacing: -0.055em !important;
+  text-transform: none !important;
+
+  color: var(--home-hero-cream) !important;
+}
+
+.hero__title-line {
+  display: block !important;
+  width: 100% !important;
+  white-space: nowrap !important;
+}
+
+.hero__title-line + .hero__title-line {
+  margin-top: 0.05em !important;
+}
+
+.hero__title em {
+  display: inline !important;
+  font-style: italic !important;
+  font-weight: 700 !important;
+}
+
+/* Bajada */
+.hero__subtitle {
+  max-width: 29ch !important;
+
+  margin-top: clamp(1.35rem, 2vw, 1.9rem) !important;
+
+  font-family: var(--font-body) !important;
+  font-size: clamp(0.98rem, 1.12vw, 1.2rem) !important;
+  font-weight: 650 !important;
+  line-height: 1.3 !important;
+  letter-spacing: -0.02em !important;
+
+  color: rgba(250, 245, 234, 0.9) !important;
+}
+
+/* CTA */
+.hero__actions {
+  position: relative !important;
+  z-index: 1 !important;
+
+  display: flex !important;
+  align-items: center !important;
+
+  margin-top: clamp(1.6rem, 2.5vw, 2.3rem) !important;
+}
+
+.hero__cta,
+.hero .btn--primary {
+  width: fit-content !important;
+
+  background: var(--color-sound-yellow, #D99300) !important;
+  border-color: var(--color-sound-yellow, #D99300) !important;
+  color: var(--color-deep-brown, #2A160E) !important;
+
+  box-shadow: 0 18px 42px rgba(217, 147, 0, 0.22) !important;
+}
+
+.hero__cta:hover,
+.hero .btn--primary:hover {
+  background: var(--home-hero-cream) !important;
+  border-color: var(--home-hero-cream) !important;
+  color: var(--color-workshop-green, #173D35) !important;
+}
+
+/* Microcopy inferior */
+.hero__content::after {
+  content: "TRS-HOME / MADERA · MANOS · SONIDO" !important;
+
+  position: relative !important;
+  z-index: 1 !important;
+
+  display: block !important;
+
+  margin-top: clamp(2rem, 4.6vh, 3.6rem) !important;
+
+  font-family: var(--font-body) !important;
+  font-size: 0.62rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.2em !important;
+  line-height: 1.4 !important;
+  text-transform: uppercase !important;
+
+  color: rgba(250, 245, 234, 0.58) !important;
+}
+
+/* Header arriba del hero */
+.header {
+  z-index: 100 !important;
+  mix-blend-mode: normal !important;
+}
+
+.header:not(.is-scrolled) .logo,
+.header:not(.is-scrolled) .nav__link,
+.header:not(.is-scrolled) .nav__cta {
+  color: var(--home-hero-cream) !important;
+}
+
+.header:not(.is-scrolled) .nav__cta {
+  border-color: rgba(250, 245, 234, 0.55) !important;
+}
+
+/* Animación de la imagen */
+@keyframes homeHeroGlassImageMove {
+  0% {
+    transform: scale(1.035) translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: scale(1.075) translate3d(-16px, -8px, 0);
+  }
+}
+
+/* Ajuste para pantallas medianas */
+@media (max-width: 1180px) {
+  :root {
+    --home-glass-width: min(44vw, 610px);
+  }
+
+  .hero__content {
+    padding-left: clamp(2.8rem, 4.2vw, 4.8rem) !important;
+    padding-right: clamp(1.75rem, 2.6vw, 2.75rem) !important;
+  }
+
+  .hero__title {
+    font-size: clamp(4rem, 5.4vw, 6rem) !important;
+    max-width: 8.5ch !important;
+  }
+
+  .hero__img {
+    object-position: 70% center !important;
+  }
+}
+
+/* Tablet / mobile */
+@media (max-width: 900px) {
+  :root {
+    --home-glass-width: calc(100% - 2.5rem);
+  }
+
+  .hero {
+    height: 100svh !important;
+    min-height: 680px !important;
+  }
+
+  .hero__img {
+    object-position: 64% center !important;
+  }
+
+  .hero__overlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(6, 45, 39, 0.38) 0%,
+        rgba(6, 45, 39, 0.16) 42%,
+        rgba(6, 45, 39, 0.52) 100%
+      ) !important;
+  }
+
+  .hero__content {
+    width: var(--home-glass-width) !important;
+    max-width: var(--home-glass-width) !important;
+    min-height: auto !important;
+
+    margin: 6.5rem auto 2rem !important;
+
+    padding:
+      2rem
+      1.6rem
+      2.2rem !important;
+
+    border-radius: 0 28px 0 0 !important;
+  }
+
+  .hero__title {
+    max-width: 9.5ch !important;
+    font-size: clamp(3.4rem, 13vw, 5.4rem) !important;
+  }
+
+  .hero__title-line {
+    white-space: normal !important;
+  }
+
+  .hero__subtitle {
+    max-width: 27ch !important;
+    font-size: clamp(0.98rem, 3.6vw, 1.2rem) !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero {
+    min-height: 640px !important;
+  }
+
+  .hero__content {
+    width: calc(100% - 2rem) !important;
+    max-width: calc(100% - 2rem) !important;
+
+    margin-top: 6.25rem !important;
+
+    padding:
+      1.75rem
+      1.35rem
+      1.9rem !important;
+  }
+
+  .hero__title {
+    max-width: 9ch !important;
+    font-size: clamp(2.75rem, 12vw, 3.7rem) !important;
+    line-height: 0.92 !important;
+  }
+
+  .hero__subtitle {
+    max-width: 24ch !important;
+  }
+
+  .hero__content::after {
+    margin-top: 1.8rem !important;
+    font-size: 0.54rem !important;
+    letter-spacing: 0.16em !important;
+  }
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .hero__img {
+    animation: none !important;
+    transform: scale(1.035) !important;
+  }
 }

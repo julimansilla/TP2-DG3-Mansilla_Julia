@@ -1162,7 +1162,7 @@ body.page-custom-build {
   gap: 1rem;
   padding: 1.4rem 0;
   font-family: var(--font-display);
-  font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+  font-size: 1.3rem !important;
   font-weight: 600;
   color: var(--color-ink);
   text-align: left;
@@ -4477,86 +4477,9 @@ body.page-custom-build {
   }
 }
 
-/* ============================================================
-   CONFIGURADOR — SOLO MADERA
-   ============================================================ */
 
-/* El resumen ya no necesita dos columnas */
-.page-custom-build .custom-config__summary-list {
-  grid-template-columns: 1fr !important;
-}
 
-/* El bloque de resumen queda más compacto */
-.page-custom-build .custom-config__summary {
-  max-width: 360px;
-}
 
-/* Más aire entre resumen y elección de madera */
-.page-custom-build .custom-config__summary + .custom-config__group {
-  margin-top: 1.1rem !important;
-}
-
-/* La sección de opciones gana más protagonismo */
-.page-custom-build .custom-config__group-label {
-  margin-bottom: 1rem;
-}
-
-/* Quitamos cualquier lógica visual vieja de acabado */
-.page-custom-build .custom-config__guitar-overlay {
-  display: none !important;
-}
-
-/* Con una sola decisión, los botones pueden respirar mejor */
-@media (min-width: 1101px) {
-  .page-custom-build .custom-config__options--textures {
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-  }
-}
-
-/* En tablet mantenemos las opciones cómodas */
-@media (max-width: 1100px) {
-  .page-custom-build .custom-config__options--textures {
-    grid-template-columns: 1fr !important;
-  }
-}
-
-/* ============================================================
-   CONFIGURADOR — SIN CUADRO DE CONFIGURACIÓN ACTUAL
-   ============================================================ */
-
-.page-custom-build .custom-config__summary {
-  display: none !important;
-}
-
-/* Al no haber resumen, acercamos la elección de madera al texto */
-
-.page-custom-build .custom-config__head {
-  margin-bottom: clamp(1.5rem, 3vw, 2.4rem) !important;
-}
-
-.page-custom-build .custom-config__group {
-  margin-top: 0 !important;
-}
-
-/* La elección de madera toma más presencia */
-
-.page-custom-build .custom-config__group-label {
-  margin-bottom: 1rem;
-}
-
-@media (min-width: 1101px) {
-  .page-custom-build .custom-config__options--textures {
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-  }
-
-  .page-custom-build .custom-config__btn--texture {
-    min-height: 140px;
-  }
-
-  .page-custom-build .custom-config__texture {
-    height: 60px !important;
-  }
-}
 /* ============================================================
    CUSTOM BUILD — SISTEMA VISUAL TRASTES
    Adaptación del sistema de la home
@@ -5005,7 +4928,7 @@ body.page-custom-build {
 /* 1. Forzamos la misma tipografía display de la home */
 
 body.page-custom-build {
-  --font-display: 'Fraunces', serif;
+  --font-display: 'Cormorant Garamond', serif;
 }
 
 /* Aplicamos la tipografía a todos los títulos importantes */
@@ -5095,4 +5018,1948 @@ body.page-custom-build {
 
 .page-custom-build .custom-hero__price {
   color: var(--color-cream-soft) !important;
+}
+/* ============================================================
+   SISTEMA TIPOGRÁFICO FINAL — CUSTOM BUILD
+   Cormorant Garamond + palabra destacada
+   ============================================================ */
+
+body.page-custom-build {
+  --font-display: 'Cormorant Garamond', serif !important;
+  --font-body: 'Inter', sans-serif !important;
+}
+
+/* Títulos principales */
+
+.page-custom-build .custom-hero__title,
+.page-custom-build .custom-result__title,
+.page-custom-build .custom-process__title,
+.page-custom-build .custom-config__title,
+.page-custom-build .custom-craft__title,
+.page-custom-build .custom-includes__title,
+.page-custom-build .custom-projects__title,
+.page-custom-build .custom-faq__title,
+.page-custom-build .custom-contact__title,
+.page-custom-build .custom-final-cta__title {
+  font-family: var(--font-display) !important;
+}
+
+/* Títulos internos de sección */
+
+.page-custom-build .custom-result__title,
+.page-custom-build .custom-process__title,
+.page-custom-build .custom-config__title,
+.page-custom-build .custom-craft__title,
+.page-custom-build .custom-includes__title,
+.page-custom-build .custom-projects__title,
+.page-custom-build .custom-faq__title,
+.page-custom-build .custom-contact__title,
+.page-custom-build .custom-final-cta__title {
+  font-weight: 600 !important;
+  line-height: 0.94 !important;
+  letter-spacing: -0.035em !important;
+}
+
+/* Palabra destacada */
+
+.page-custom-build .custom-result__title em,
+.page-custom-build .custom-process__title em,
+.page-custom-build .custom-config__title em,
+.page-custom-build .custom-craft__title em,
+.page-custom-build .custom-includes__title em,
+.page-custom-build .custom-projects__title em,
+.page-custom-build .custom-faq__title em,
+.page-custom-build .custom-contact__title em,
+.page-custom-build .custom-final-cta__title em {
+  font-family: var(--font-display) !important;
+  font-style: italic !important;
+  font-weight: 700 !important;
+}
+
+/* Hero Custom Build: excepción, todo fuerte y sin itálica */
+
+.page-custom-build .custom-hero__title {
+  font-weight: 700 !important;
+  line-height: 0.84 !important;
+  letter-spacing: -0.05em !important;
+}
+
+.page-custom-build .custom-hero__title em {
+  font-style: normal !important;
+  font-weight: 700 !important;
+}
+/* ============================================================
+   PALABRA DESTACADA — BOLD ITALIC CUSTOM BUILD
+   ============================================================ */
+
+.page-custom-build .custom-result__title em,
+.page-custom-build .custom-process__title em,
+.page-custom-build .custom-config__title em,
+.page-custom-build .custom-craft__title em,
+.page-custom-build .custom-includes__title em,
+.page-custom-build .custom-projects__title em,
+.page-custom-build .custom-faq__title em,
+.page-custom-build .custom-contact__title em,
+.page-custom-build .custom-final-cta__title em {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-style: italic !important;
+  font-weight: 700 !important;
+}
+/* ============================================================
+   CUSTOM BUILD — ADAPTACIÓN FINAL AL SISTEMA HOME
+   Cormorant + Inter · verde · mostaza · crema
+   ============================================================ */
+
+body.page-custom-build {
+  /* Paleta compartida con home */
+  --color-bg-light: #F4EFE4;
+  --color-cream: #F4EFE4;
+  --color-cream-soft: #FAF5EA;
+  --color-paper: #FFF8ED;
+
+  --color-ink: #21130C;
+  --color-deep-brown: #2A160E;
+
+  --color-workshop-green: #173D35;
+  --color-workshop-green-dark: #09261F;
+  --color-workshop-green-soft: #DCE7DA;
+
+  --color-sound-yellow: #D99300;
+  --color-sound-yellow-soft: #F0BD4F;
+  --color-sound-yellow-dark: #B36D00;
+
+  --color-wood-brown: #8A5A35;
+  --color-warm-grey: #9D9588;
+  --color-warm-white: #FAF5EA;
+
+  --line-soft: rgba(33, 19, 12, 0.16);
+  --line-dark: rgba(250, 245, 234, 0.18);
+
+  --radius-image: 2.15rem;
+  --radius-card: 1.6rem;
+  --radius-pill: 999px;
+
+  --image-corner: 0 var(--radius-image) 0 0;
+  --card-corner: 0 var(--radius-card) 0 0;
+
+  --font-display: 'Cormorant Garamond', serif !important;
+  --font-body: 'Inter', sans-serif !important;
+
+  background: var(--color-cream);
+  color: var(--color-ink);
+}
+
+/* ============================================================
+   FONDOS DEL SISTEMA
+   ============================================================ */
+
+.page-custom-build .custom-promise,
+.page-custom-build .custom-result,
+.page-custom-build .custom-config,
+.page-custom-build .custom-projects,
+.page-custom-build .custom-faq,
+.page-custom-build .custom-contact {
+  background: var(--color-cream) !important;
+  color: var(--color-ink) !important;
+}
+
+.page-custom-build .custom-hero__col--text,
+.page-custom-build .custom-process,
+.page-custom-build .custom-includes {
+  background:
+    linear-gradient(
+      135deg,
+      var(--color-workshop-green-dark) 0%,
+      var(--color-workshop-green) 52%,
+      #071B17 100%
+    ) !important;
+
+  color: var(--color-warm-white) !important;
+}
+
+/* ============================================================
+   TIPOGRAFÍA — MISMO SISTEMA QUE HOME
+   ============================================================ */
+
+.page-custom-build .custom-hero__title,
+.page-custom-build .custom-promise__title,
+.page-custom-build .custom-result__title,
+.page-custom-build .custom-process__title,
+.page-custom-build .custom-config__title,
+.page-custom-build .custom-craft__title,
+.page-custom-build .custom-includes__title,
+.page-custom-build .custom-projects__title,
+.page-custom-build .custom-faq__title,
+.page-custom-build .custom-contact__title,
+.page-custom-build .custom-final-cta__title,
+.page-custom-build .custom-timeline__heading,
+.page-custom-build .custom-benefits__heading,
+.page-custom-build .custom-project-card__detail h3,
+.page-custom-build .custom-accordion__trigger {
+  font-family: var(--font-display) !important;
+}
+
+/* Títulos internos */
+
+.page-custom-build .custom-promise__title,
+.page-custom-build .custom-result__title,
+.page-custom-build .custom-process__title,
+.page-custom-build .custom-config__title,
+.page-custom-build .custom-craft__title,
+.page-custom-build .custom-includes__title,
+.page-custom-build .custom-projects__title,
+.page-custom-build .custom-faq__title,
+.page-custom-build .custom-contact__title,
+.page-custom-build .custom-final-cta__title {
+  font-weight: 600 !important;
+  line-height: 0.92 !important;
+  letter-spacing: -0.035em !important;
+}
+
+/* Palabras destacadas en bold italic */
+
+.page-custom-build .custom-promise__title em,
+.page-custom-build .custom-result__title em,
+.page-custom-build .custom-process__title em,
+.page-custom-build .custom-config__title em,
+.page-custom-build .custom-craft__title em,
+.page-custom-build .custom-includes__title em,
+.page-custom-build .custom-projects__title em,
+.page-custom-build .custom-faq__title em,
+.page-custom-build .custom-contact__title em,
+.page-custom-build .custom-final-cta__title em {
+  font-family: var(--font-display) !important;
+  font-style: italic !important;
+  font-weight: 700 !important;
+}
+
+/* Hero Custom Build: portada fuerte, sin itálica */
+
+.page-custom-build .custom-hero__title {
+  font-weight: 700 !important;
+  line-height: 0.84 !important;
+  letter-spacing: -0.045em !important;
+}
+
+.page-custom-build .custom-hero__title em {
+  font-style: normal !important;
+  font-weight: 700 !important;
+}
+
+/* Textos */
+
+.page-custom-build p,
+.page-custom-build li,
+.page-custom-build label,
+.page-custom-build input,
+.page-custom-build select,
+.page-custom-build textarea,
+.page-custom-build button {
+  font-family: var(--font-body);
+}
+
+/* ============================================================
+   VOLANTAS — MOSTAZA + LÍNEA
+   ============================================================ */
+
+.page-custom-build .custom-eyebrow {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.75rem;
+
+  width: auto;
+  margin: 0 0 0.9rem !important;
+
+  font-family: var(--font-body) !important;
+  font-size: 0.68rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase;
+
+  color: var(--color-sound-yellow) !important;
+}
+
+.page-custom-build .custom-eyebrow::after {
+  content: "" !important;
+
+  display: block !important;
+
+  width: 48px;
+  height: 1px;
+
+  margin: 0 !important;
+
+  background: currentColor !important;
+
+  flex: 0 0 48px;
+}
+
+.page-custom-build .custom-eyebrow--light {
+  color: var(--color-sound-yellow-soft) !important;
+  opacity: 1 !important;
+}
+
+/* ============================================================
+   BOTONES — MISMO SISTEMA HOME
+   ============================================================ */
+
+.page-custom-build .btn {
+  border-radius: var(--radius-pill) !important;
+
+  font-family: var(--font-body) !important;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+
+  transition:
+    background 0.35s var(--ease),
+    color 0.35s var(--ease),
+    border-color 0.35s var(--ease),
+    transform 0.35s var(--ease);
+}
+
+/* Botón principal sobre fondos claros */
+
+.page-custom-build .btn--primary {
+  background: var(--color-workshop-green) !important;
+  color: var(--color-cream-soft) !important;
+  border: 1px solid var(--color-workshop-green) !important;
+}
+
+.page-custom-build .btn--primary:hover {
+  background: var(--color-sound-yellow) !important;
+  border-color: var(--color-sound-yellow) !important;
+  color: var(--color-deep-brown) !important;
+
+  transform: translateY(-2px);
+}
+
+/* Botón principal dentro del hero verde: mostaza protagonista */
+
+.page-custom-build .custom-hero .btn--primary {
+  background: var(--color-sound-yellow) !important;
+  border-color: var(--color-sound-yellow) !important;
+  color: var(--color-deep-brown) !important;
+
+  box-shadow: 0 18px 42px rgba(217, 147, 0, 0.22);
+}
+
+.page-custom-build .custom-hero .btn--primary:hover {
+  background: var(--color-cream-soft) !important;
+  border-color: var(--color-cream-soft) !important;
+  color: var(--color-workshop-green) !important;
+}
+
+/* Secundarios */
+
+.page-custom-build .btn--ghost-dark,
+.page-custom-build .btn--secondary {
+  background: transparent !important;
+  color: var(--color-workshop-green) !important;
+  border: 1px solid var(--color-workshop-green) !important;
+}
+
+.page-custom-build .btn--ghost-dark:hover,
+.page-custom-build .btn--secondary:hover {
+  background: var(--color-workshop-green) !important;
+  color: var(--color-cream-soft) !important;
+  border-color: var(--color-workshop-green) !important;
+
+  transform: translateY(-2px);
+}
+
+/* Botón sobre fondos oscuros */
+
+.page-custom-build .btn--ghost {
+  background: transparent !important;
+  color: var(--color-cream-soft) !important;
+  border: 1px solid rgba(250, 245, 234, 0.55) !important;
+}
+
+.page-custom-build .btn--ghost:hover {
+  background: var(--color-cream-soft) !important;
+  color: var(--color-workshop-green) !important;
+  border-color: var(--color-cream-soft) !important;
+}
+
+/* Flecha circular */
+
+.page-custom-build .btn--arrow .btn__arrow {
+  width: 1.25rem;
+  height: 1.25rem;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(250, 245, 234, 0.18);
+  color: currentColor;
+
+  font-size: 0.82em;
+  line-height: 1;
+}
+
+.page-custom-build .btn--primary .btn__arrow {
+  background: var(--color-cream-soft);
+  color: var(--color-workshop-green);
+}
+
+.page-custom-build .custom-hero .btn--primary .btn__arrow {
+  background: var(--color-deep-brown);
+  color: var(--color-cream-soft);
+}
+
+.page-custom-build .custom-hero .btn--primary:hover .btn__arrow {
+  background: var(--color-workshop-green);
+  color: var(--color-cream-soft);
+}
+
+/* ============================================================
+   IMÁGENES — UNA SOLA ESQUINA REDONDEADA
+   ============================================================ */
+
+.page-custom-build .custom-promise__media,
+.page-custom-build .custom-result__sequence,
+.page-custom-build .custom-result-card,
+.page-custom-build .custom-process__right,
+.page-custom-build .custom-project-card__media,
+.page-custom-build .custom-config__guitar-wrap {
+  border-radius: var(--image-corner) !important;
+  overflow: hidden;
+}
+
+/* No tocar hero ni configurador full split si están a sangre */
+
+.page-custom-build .custom-hero__col--media,
+.page-custom-build .custom-config__visual {
+  border-radius: 0 !important;
+}
+
+/* ============================================================
+   TAGS / CHIPS / ESTADOS
+   ============================================================ */
+
+.page-custom-build .custom-project-card__tags li,
+.page-custom-build .custom-result__category,
+.page-custom-build .custom-result-card__category {
+  border-radius: var(--radius-pill);
+}
+
+.page-custom-build .custom-project-card__tags li {
+  border-color: rgba(23, 61, 53, 0.28) !important;
+  color: var(--color-workshop-green) !important;
+}
+
+.page-custom-build .custom-result__number,
+.page-custom-build .custom-result-card__number,
+.page-custom-build .custom-timeline__num,
+.page-custom-build .custom-benefits__icon,
+.page-custom-build .custom-config__group-num,
+.page-custom-build .custom-accordion__icon {
+  color: var(--color-sound-yellow) !important;
+}
+
+/* ============================================================
+   LÍNEAS — SUTILES, NO BARRAS DE PROGRESO
+   ============================================================ */
+
+.page-custom-build .custom-timeline__line {
+  background: rgba(250, 245, 234, 0.18) !important;
+}
+
+.page-custom-build .custom-config__group-label,
+.page-custom-build .custom-config__footer,
+.page-custom-build .custom-accordion,
+.page-custom-build .custom-accordion__item,
+.page-custom-build .custom-contact,
+.page-custom-build .custom-form__input,
+.page-custom-build .custom-form__select,
+.page-custom-build .custom-form__textarea {
+  border-color: var(--line-soft) !important;
+}
+
+.page-custom-build .custom-process .custom-timeline__item,
+.page-custom-build .custom-includes .custom-benefits__item {
+  border-color: var(--line-dark) !important;
+}
+
+/* ============================================================
+   FORMULARIO — MÁS EDITORIAL COMO SISTEMA
+   ============================================================ */
+
+.page-custom-build .custom-form__input,
+.page-custom-build .custom-form__select,
+.page-custom-build .custom-form__textarea {
+  border-radius: 0 !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--line-soft) !important;
+
+  background: transparent !important;
+  color: var(--color-ink) !important;
+
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.page-custom-build .custom-form__input:focus,
+.page-custom-build .custom-form__select:focus,
+.page-custom-build .custom-form__textarea:focus {
+  border-bottom-color: var(--color-workshop-green) !important;
+}
+
+/* ============================================================
+   CONFIGURADOR — SISTEMA HOME
+   ============================================================ */
+
+.page-custom-build .custom-config {
+  background: var(--color-cream) !important;
+}
+
+.page-custom-build .custom-config__visual {
+  background: #E9E2D5 !important;
+}
+
+.page-custom-build .custom-config__panel {
+  background: var(--color-cream) !important;
+}
+
+.page-custom-build .custom-config__title,
+.page-custom-build .custom-config__lead {
+  color: var(--color-ink) !important;
+}
+
+.page-custom-build .custom-config__btn {
+  border-color: rgba(33, 19, 12, 0.18) !important;
+  background: transparent !important;
+  color: var(--color-ink) !important;
+}
+
+.page-custom-build .custom-config__btn:hover {
+  border-color: var(--color-workshop-green) !important;
+}
+
+.page-custom-build .custom-config__btn.is-selected,
+.page-custom-build .custom-config__btn[aria-pressed="true"] {
+  background: var(--color-workshop-green) !important;
+  color: var(--color-cream-soft) !important;
+  border-color: var(--color-workshop-green) !important;
+}
+
+.page-custom-build
+.custom-config__btn.is-selected
+.custom-config__option-sub {
+  color: rgba(250, 245, 234, 0.72) !important;
+}
+
+/* ============================================================
+   GALERÍA / PROYECTOS
+   ============================================================ */
+
+.page-custom-build .custom-project-card__detail {
+  background: var(--color-workshop-green-dark) !important;
+  color: var(--color-cream-soft) !important;
+
+  border: 1px solid rgba(250, 245, 234, 0.22) !important;
+}
+
+.page-custom-build .custom-projects__btn {
+  border: 1px solid var(--color-workshop-green) !important;
+  color: var(--color-workshop-green) !important;
+  background: transparent !important;
+}
+
+.page-custom-build .custom-projects__btn:hover:not(:disabled) {
+  background: var(--color-sound-yellow) !important;
+  color: var(--color-deep-brown) !important;
+  border-color: var(--color-sound-yellow) !important;
+}
+
+/* ============================================================
+   CTA FINAL
+   ============================================================ */
+
+.page-custom-build .custom-final-cta__overlay {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(9, 38, 31, 0.86),
+      rgba(23, 61, 53, 0.72)
+    ) !important;
+}
+
+.page-custom-build .custom-final-cta__title {
+  color: var(--color-cream-soft) !important;
+}
+
+.page-custom-build .custom-final-cta__note {
+  color: rgba(250, 245, 234, 0.68) !important;
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 640px) {
+  .page-custom-build .custom-eyebrow::after {
+    width: 38px;
+    flex-basis: 38px;
+  }
+
+  .page-custom-build .custom-hero__title {
+    line-height: 0.88 !important;
+  }
+
+  .page-custom-build .custom-promise__title,
+  .page-custom-build .custom-result__title,
+  .page-custom-build .custom-process__title,
+  .page-custom-build .custom-config__title,
+  .page-custom-build .custom-craft__title,
+  .page-custom-build .custom-includes__title,
+  .page-custom-build .custom-projects__title,
+  .page-custom-build .custom-faq__title,
+  .page-custom-build .custom-contact__title {
+    line-height: 0.98 !important;
+  }
+}
+/* ============================================================
+   LIMPIEZA DE MARCAS GRÁFICAS — CUSTOM BUILD
+   Elimina líneas verticales y marcas de esquina
+   ============================================================ */
+
+.page-custom-build .custom-result__head::before,
+.page-custom-build .custom-process__head::before,
+.page-custom-build .custom-config__head::before,
+.page-custom-build .custom-includes__head::before,
+.page-custom-build .custom-projects__head::before,
+.page-custom-build .custom-faq__head::before,
+.page-custom-build .custom-contact__copy::before,
+.page-custom-build .custom-craft__content::before,
+.page-custom-build .custom-final-cta__content::before,
+.page-custom-build .custom-result__sequence::before,
+.page-custom-build .custom-process__right::before,
+.page-custom-build .custom-config__guitar-wrap::before,
+.page-custom-build .custom-project-card__media::before,
+.page-custom-build .custom-promise__media::before,
+.page-custom-build .custom-hero::before,
+.page-custom-build .custom-hero::after {
+  content: none !important;
+  display: none !important;
+}
+
+
+/* ============================================================
+   AJUSTES FINALES CUSTOM BUILD — LISTA DE CORRECCIONES
+   ============================================================ */
+
+/* 1. Volantas: línea antes de la palabra */
+
+.page-custom-build .custom-eyebrow {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+}
+
+.page-custom-build .custom-eyebrow::after {
+  content: none !important;
+  display: none !important;
+}
+
+.page-custom-build .custom-eyebrow::before {
+  content: "" !important;
+
+  display: block !important;
+
+  width: 48px;
+  height: 1px;
+
+  background: currentColor !important;
+
+  flex: 0 0 48px;
+}
+
+@media (max-width: 640px) {
+  .page-custom-build .custom-eyebrow::before {
+    width: 38px;
+    flex-basis: 38px;
+  }
+}
+
+/* 2. Botones: eliminar círculo alrededor de la flecha */
+
+.page-custom-build .btn--arrow .btn__arrow,
+.page-custom-build .btn--primary .btn__arrow,
+.page-custom-build .custom-hero .btn--primary .btn__arrow,
+.page-custom-build .custom-hero .btn--primary:hover .btn__arrow {
+  width: auto !important;
+  height: auto !important;
+
+  display: inline-block !important;
+
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: currentColor !important;
+
+  font-size: 1em !important;
+  line-height: 1 !important;
+}
+
+.page-custom-build .btn--arrow:hover .btn__arrow {
+  transform: translateX(4px);
+}
+
+/* 3. Materia prima / cards de selección: cerradas y se abren en hover */
+
+.page-custom-build .custom-config__btn .custom-config__option-sub {
+  max-height: 0;
+  margin-top: 0 !important;
+
+  opacity: 0;
+  overflow: hidden;
+
+  transition:
+    max-height 0.35s var(--ease),
+    opacity 0.25s ease,
+    margin-top 0.25s ease;
+}
+
+.page-custom-build .custom-config__btn:hover .custom-config__option-sub,
+.page-custom-build .custom-config__btn:focus-visible .custom-config__option-sub,
+.page-custom-build .custom-config__btn.is-selected .custom-config__option-sub,
+.page-custom-build .custom-config__btn[aria-pressed="true"] .custom-config__option-sub {
+  max-height: 4.5rem;
+  margin-top: 0.25rem !important;
+
+  opacity: 1;
+}
+
+/* En mobile no ocultamos la información: no hay hover real */
+@media (hover: none) {
+  .page-custom-build .custom-config__btn .custom-config__option-sub {
+    max-height: 5rem;
+    margin-top: 0.25rem !important;
+
+    opacity: 1;
+  }
+}
+
+/* 4. El resultado: 3 cards independientes */
+
+.page-custom-build .custom-result__sequence,
+.page-custom-build .custom-result__mobile {
+  display: none !important;
+}
+
+.page-custom-build .custom-result__cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.85rem, 1.4vw, 1.25rem);
+}
+
+.page-custom-build .custom-result-card {
+  position: relative;
+
+  min-height: clamp(420px, 42vw, 620px);
+
+  overflow: hidden;
+
+  border-radius: var(--image-corner) !important;
+  background: var(--color-workshop-green-dark);
+  color: var(--color-cream-soft);
+}
+
+.page-custom-build .custom-result-card__media {
+  position: absolute;
+  inset: 0;
+
+  margin: 0;
+}
+
+.page-custom-build .custom-result-card__media img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  transform: scale(1);
+
+  transition:
+    transform 0.8s var(--ease),
+    filter 0.5s ease;
+}
+
+.page-custom-build .custom-result-card__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(9, 38, 31, 0.02) 18%,
+      rgba(9, 38, 31, 0.28) 54%,
+      rgba(9, 38, 31, 0.9) 100%
+    );
+
+  pointer-events: none;
+}
+
+.page-custom-build .custom-result-card__content {
+  position: absolute;
+  left: clamp(1.1rem, 1.7vw, 1.6rem);
+  right: clamp(1.1rem, 1.7vw, 1.6rem);
+  bottom: clamp(1.1rem, 1.8vw, 1.75rem);
+  z-index: 2;
+
+  color: var(--color-cream-soft);
+}
+
+.page-custom-build .custom-result-card__number {
+  display: block;
+
+  margin-bottom: 0.45rem;
+
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+
+  color: var(--color-sound-yellow) !important;
+}
+
+.page-custom-build .custom-result-card__category {
+  margin: 0 0 0.55rem;
+
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  color: rgba(250, 245, 234, 0.72);
+}
+
+.page-custom-build .custom-result-card h3 {
+  max-width: 16ch;
+
+  margin: 0 0 0.65rem;
+
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2vw, 1.85rem);
+  font-weight: 650;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+
+.page-custom-build .custom-result-card p:last-child {
+  max-width: 30ch;
+
+  margin: 0;
+
+  font-size: 0.82rem;
+  line-height: 1.55;
+
+  color: rgba(250, 245, 234, 0.72);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .page-custom-build .custom-result-card:hover .custom-result-card__media img {
+    transform: scale(1.04);
+    filter: saturate(1.04) contrast(1.04);
+  }
+}
+
+@media (max-width: 880px) {
+  .page-custom-build .custom-result__cards {
+    grid-template-columns: 1fr;
+  }
+
+  .page-custom-build .custom-result-card {
+    min-height: 420px;
+  }
+}
+
+/* 5. El proceso: video en lugar de imagen */
+
+.page-custom-build .custom-process__right {
+  position: relative !important;
+
+  overflow: hidden;
+
+  border-radius: var(--image-corner) !important;
+  background: var(--color-workshop-green-dark);
+}
+
+.page-custom-build .custom-process__video {
+  position: absolute;
+  inset: 0;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+.page-custom-build .custom-process__video-label {
+  color: rgba(250, 245, 234, 0.86);
+}
+
+.page-custom-build .custom-process__video-dot {
+  background: var(--color-sound-yellow);
+}
+
+
+.page-custom-build .custom-config__guitar-overlay {
+  display: block !important;
+}
+
+/* 7. Footer verde del sistema */
+
+.page-custom-build .footer {
+  background:
+    linear-gradient(
+      135deg,
+      var(--color-workshop-green-dark) 0%,
+      var(--color-workshop-green) 52%,
+      #071B17 100%
+    ) !important;
+
+  color: var(--color-cream-soft) !important;
+}
+
+.page-custom-build .footer__logo {
+  color: var(--color-cream-soft) !important;
+}
+
+.page-custom-build .footer__tagline {
+  color: rgba(250, 245, 234, 0.76) !important;
+}
+
+.page-custom-build .footer__heading {
+  color: var(--color-sound-yellow) !important;
+}
+
+.page-custom-build .footer__col a,
+.page-custom-build .footer__col span,
+.page-custom-build .footer__bottom {
+  color: rgba(250, 245, 234, 0.64) !important;
+}
+
+.page-custom-build .footer__col a:hover {
+  color: var(--color-cream-soft) !important;
+}
+
+.page-custom-build .footer__top,
+.page-custom-build .footer__bottom {
+  border-color: rgba(250, 245, 234, 0.14) !important;
+}
+
+/* ============================================================
+   CUSTOM CONFIG — versión más compacta
+   para que entre en una sola pantalla
+   ============================================================ */
+
+@media (min-width: 901px) {
+  .page-custom-build .custom-config__panel {
+    padding: 2.25rem 2.5rem !important;
+    gap: 0.85rem !important;
+    justify-content: center !important;
+    min-height: 100svh;
+  }
+
+  .page-custom-build .custom-config__head {
+    margin: 0 0 0.65rem !important;
+    max-width: 620px;
+  }
+
+  .page-custom-build .custom-config__title {
+    font-size: clamp(2.1rem, 3.1vw, 3.2rem) !important;
+    max-width: 11ch;
+    line-height: 0.95 !important;
+  }
+
+  .page-custom-build .custom-config__lead {
+    margin-top: 0.7rem !important;
+    font-size: 0.9rem !important;
+    line-height: 1.35 !important;
+    max-width: 34ch;
+  }
+
+  .page-custom-build .custom-config__group {
+    margin: 0 0 0.8rem !important;
+  }
+
+  .page-custom-build .custom-config__group-label {
+    margin: 0 0 0.65rem !important;
+    padding: 0 0 0.45rem !important;
+    font-size: 0.68rem !important;
+    letter-spacing: 0.12em !important;
+  }
+
+  .page-custom-build .custom-config__options,
+  .page-custom-build .custom-config__options--textures {
+    gap: 0.55rem !important;
+  }
+
+  .page-custom-build .custom-config__options--textures {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+
+  .page-custom-build .custom-config__btn {
+    padding: 0.55rem 0.65rem !important;
+    font-size: 0.76rem !important;
+  }
+
+  .page-custom-build .custom-config__btn--texture {
+    min-height: 110px !important;
+    padding: 0.45rem !important;
+    gap: 0.3rem !important;
+  }
+
+  .page-custom-build .custom-config__texture {
+    height: 42px !important;
+  }
+
+  .page-custom-build .custom-config__option-name {
+    font-size: 0.74rem !important;
+    line-height: 1.05 !important;
+  }
+
+  .page-custom-build .custom-config__option-sub {
+    font-size: 0.61rem !important;
+    line-height: 1.2 !important;
+    margin-top: 0.15rem !important;
+  }
+
+  .page-custom-build .custom-config__footer {
+    margin-top: 0.45rem !important;
+    padding-top: 0.8rem !important;
+  }
+
+  .page-custom-build .custom-config__footer-note {
+    margin: 0 0 0.75rem !important;
+    font-size: 0.78rem !important;
+    line-height: 1.3 !important;
+    max-width: 36ch;
+  }
+
+  .page-custom-build .custom-config__footer .btn {
+    padding: 0.72rem 1.1rem !important;
+    font-size: 0.73rem !important;
+  }
+}
+@media (min-width: 901px) {
+  .page-custom-build .custom-config__layout {
+    grid-template-columns: 46vw 54vw !important;
+  }
+
+  .page-custom-build .custom-config__visual {
+    height: 100svh !important;
+  }
+
+  .page-custom-build .custom-config__guitar-img {
+    object-fit: cover !important;
+  }
+}
+
+
+/* ============================================================
+   CONFIGURADOR — ACABADO SOLO SOBRE LA GUITARRA
+   Requiere PNG/WebP con fondo transparente
+   ============================================================ */
+
+.page-custom-build .custom-config__guitar-wrap {
+  background: #E9E2D5 !important;
+}
+
+.page-custom-build .custom-config__guitar-img {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+/* Capa de acabado enmascarada por la silueta de la guitarra */
+.page-custom-build .custom-config__guitar-finish {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+
+  pointer-events: none;
+
+  opacity: 0;
+  background: transparent;
+
+  mix-blend-mode: multiply;
+
+  -webkit-mask-image: var(--guitar-mask);
+  mask-image: var(--guitar-mask);
+
+  -webkit-mask-size: cover;
+  mask-size: cover;
+
+  -webkit-mask-position: center;
+  mask-position: center;
+
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+
+  transition:
+    opacity 0.35s ease,
+    background 0.35s ease;
+}
+
+.page-custom-build .custom-config__guitar-finish.has-finish {
+  opacity: 1;
+}
+/* ============================================================
+   CONFIGURADOR — LIMPIEZA FINAL DE OPCIONES
+   Madera visual + Forma/Acabado solo texto
+   ============================================================ */
+
+/* Layout general de grupos */
+.page-custom-build .custom-config__group {
+  margin: 0 0 0.85rem !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+.page-custom-build .custom-config__group-label {
+  margin: 0 0 0.5rem !important;
+  padding: 0 0 0.45rem !important;
+
+  display: flex !important;
+  align-items: baseline !important;
+  gap: 0.55rem !important;
+
+  border-bottom: 1px solid rgba(33, 19, 12, 0.16) !important;
+
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+}
+
+.page-custom-build .custom-config__group-num {
+  color: var(--color-sound-yellow) !important;
+}
+
+/* Grillas de opciones */
+.page-custom-build .custom-config__options,
+.page-custom-build .custom-config__options--textures,
+.page-custom-build .custom-config__options--text {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 0.55rem !important;
+}
+
+/* Reset general de botones */
+.page-custom-build .custom-config__btn {
+  appearance: none !important;
+  border-radius: 0 !important;
+  border: 1px solid rgba(33, 19, 12, 0.18) !important;
+
+  background: transparent !important;
+  color: var(--color-ink) !important;
+
+  font-family: var(--font-body) !important;
+  font-weight: 750 !important;
+
+  cursor: pointer !important;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease !important;
+}
+
+.page-custom-build .custom-config__btn:hover {
+  border-color: var(--color-workshop-green) !important;
+}
+
+.page-custom-build .custom-config__btn.is-selected,
+.page-custom-build .custom-config__btn[aria-pressed="true"] {
+  background: var(--color-workshop-green) !important;
+  color: var(--color-cream-soft) !important;
+  border-color: var(--color-workshop-green) !important;
+}
+
+/* Eliminar previews viejas */
+.page-custom-build .custom-config__options--text .custom-config__btn::before,
+.page-custom-build .custom-config__options--text .custom-config__btn::after,
+.page-custom-build .custom-config__group[data-config="shape"] .custom-config__btn::before,
+.page-custom-build .custom-config__group[data-config="shape"] .custom-config__btn::after,
+.page-custom-build .custom-config__group[data-config="finish"] .custom-config__btn::before,
+.page-custom-build .custom-config__group[data-config="finish"] .custom-config__btn::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* ============================================================
+   01 — MADERA PRINCIPAL
+   ============================================================ */
+
+.page-custom-build .custom-config__group[data-config="wood"] .custom-config__btn {
+  height: 92px !important;
+  min-height: 92px !important;
+  max-height: 92px !important;
+
+  padding: 0.45rem 0.55rem !important;
+
+  display: grid !important;
+  grid-template-rows: 38px auto auto !important;
+  align-content: start !important;
+  gap: 0.25rem !important;
+
+  overflow: hidden !important;
+}
+
+.page-custom-build .custom-config__group[data-config="wood"] .custom-config__texture {
+  display: block !important;
+
+  width: 100% !important;
+  height: 38px !important;
+  min-height: 38px !important;
+  max-height: 38px !important;
+
+  overflow: hidden !important;
+}
+
+.page-custom-build .custom-config__group[data-config="wood"] .custom-config__texture img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+.page-custom-build .custom-config__group[data-config="wood"] .custom-config__option-name {
+  margin: 0 !important;
+  padding: 0 !important;
+
+  font-size: 0.78rem !important;
+  line-height: 1.05 !important;
+  font-weight: 800 !important;
+}
+
+.page-custom-build .custom-config__group[data-config="wood"] .custom-config__option-sub {
+  margin: 0 !important;
+  padding: 0 !important;
+
+  display: block !important;
+
+  font-size: 0.62rem !important;
+  line-height: 1.15 !important;
+
+  color: rgba(33, 19, 12, 0.52) !important;
+}
+
+.page-custom-build .custom-config__group[data-config="wood"] .custom-config__btn.is-selected .custom-config__option-sub {
+  color: rgba(250, 245, 234, 0.72) !important;
+}
+
+/* ============================================================
+   02 + 03 — FORMA Y ACABADO
+   ============================================================ */
+
+.page-custom-build .custom-config__group[data-config="shape"] .custom-config__btn,
+.page-custom-build .custom-config__group[data-config="finish"] .custom-config__btn,
+.page-custom-build .custom-config__options--text .custom-config__btn {
+  height: 48px !important;
+  min-height: 48px !important;
+  max-height: 48px !important;
+
+  padding: 0 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  text-align: center !important;
+  overflow: hidden !important;
+}
+
+.page-custom-build .custom-config__group[data-config="shape"] .custom-config__option-name,
+.page-custom-build .custom-config__group[data-config="finish"] .custom-config__option-name,
+.page-custom-build .custom-config__options--text .custom-config__option-name {
+  display: inline-block !important;
+
+  width: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+
+  font-size: 0.78rem !important;
+  line-height: 1 !important;
+  font-weight: 800 !important;
+
+  transform: none !important;
+}
+
+/* No mostrar bajadas ni previews en forma/acabado */
+.page-custom-build .custom-config__group[data-config="shape"] .custom-config__option-sub,
+.page-custom-build .custom-config__group[data-config="finish"] .custom-config__option-sub,
+.page-custom-build .custom-config__options--text .custom-config__option-sub,
+.page-custom-build .custom-config__options--text img,
+.page-custom-build .custom-config__options--text svg,
+.page-custom-build .custom-config__options--text .custom-config__texture,
+.page-custom-build .custom-config__options--text .custom-config__preview,
+.page-custom-build .custom-config__options--text .custom-config__swatch {
+  display: none !important;
+}
+
+/* Footer del configurador */
+.page-custom-build .custom-config__footer {
+  margin-top: 0.75rem !important;
+  padding-top: 1rem !important;
+}
+
+/* Mobile */
+@media (max-width: 760px) {
+  .page-custom-build .custom-config__options,
+  .page-custom-build .custom-config__options--textures,
+  .page-custom-build .custom-config__options--text {
+    grid-template-columns: 1fr !important;
+  }
+}
+/* ============================================================
+   CONFIGURADOR — ACABADO FUNCIONANDO
+   Segunda imagen PNG superpuesta
+   ============================================================ */
+
+/* Apaga la capa vieja de máscara */
+.page-custom-build .custom-config__guitar-finish,
+.page-custom-build .custom-config__guitar-overlay {
+  display: none !important;
+}
+
+/* Contenedor */
+.page-custom-build .custom-config__guitar-wrap {
+  position: relative !important;
+  background: #E9E2D5 !important;
+  overflow: hidden !important;
+}
+
+/* Imagen base + imagen de acabado */
+.page-custom-build .custom-config__guitar-img,
+.page-custom-build .custom-config__guitar-finish-img {
+  position: absolute !important;
+  inset: 0 !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  object-fit: cover !important;
+  object-position: center !important;
+
+  display: block !important;
+}
+
+.page-custom-build .custom-config__guitar-img {
+  z-index: 1 !important;
+}
+
+/* Imagen duplicada que se tiñe */
+.page-custom-build .custom-config__guitar-finish-img {
+  z-index: 2 !important;
+
+  pointer-events: none !important;
+
+  opacity: 0 !important;
+  mix-blend-mode: multiply !important;
+
+  transition:
+    opacity 0.3s ease,
+    filter 0.3s ease !important;
+}
+
+/* Natural */
+.page-custom-build .custom-config__guitar-finish-img[data-finish="natural"] {
+  opacity: 0 !important;
+  filter: none !important;
+}
+
+/* Tostado */
+.page-custom-build .custom-config__guitar-finish-img[data-finish="tostado"] {
+  opacity: 0.7 !important;
+  filter:
+    sepia(1)
+    saturate(1.9)
+    hue-rotate(-18deg)
+    brightness(0.95)
+    contrast(1.08) !important;
+}
+
+/* Oscuro */
+.page-custom-build .custom-config__guitar-finish-img[data-finish="oscuro"] {
+  opacity: 0.82 !important;
+  filter:
+    sepia(1)
+    saturate(1.25)
+    hue-rotate(-28deg)
+    brightness(0.52)
+    contrast(1.2) !important;
+}
+/* ============================================================
+   CUSTOM BUILD HERO — DIFERENCIADO DE LA HOME
+   Curso / ficha editorial / experiencia específica
+   ============================================================ */
+
+.page-custom-build .custom-hero {
+  position: relative !important;
+
+  min-height: 100vh !important;
+  min-height: 100svh !important;
+
+  display: block !important;
+  overflow: hidden !important;
+
+  background: #071B17 !important;
+}
+
+/* La imagen ocupa más pantalla, no queda como simple columna */
+.page-custom-build .custom-hero__col--media {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  overflow: hidden !important;
+}
+
+.page-custom-build .custom-hero__img {
+  width: 100% !important;
+  height: 100% !important;
+
+  object-fit: cover !important;
+  object-position: 68% center !important;
+
+  filter: saturate(0.92) contrast(1.08) brightness(0.9);
+
+  transform: scale(1.04) !important;
+  animation: customBuildHeroImage 10s ease-in-out infinite alternate !important;
+  will-change: transform !important;
+}
+
+/* Oscurece la izquierda para alojar la placa */
+.page-custom-build .custom-hero::after {
+  content: "" !important;
+
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+
+  pointer-events: none !important;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(6, 35, 30, 0.94) 0%,
+      rgba(6, 35, 30, 0.82) 30%,
+      rgba(6, 35, 30, 0.32) 58%,
+      rgba(6, 35, 30, 0.04) 100%
+    ) !important;
+}
+
+/* Columna de texto */
+.page-custom-build .custom-hero__col--text {
+  position: relative !important;
+  z-index: 2 !important;
+
+  min-height: 100vh !important;
+  min-height: 100svh !important;
+
+  width: min(560px, calc(100% - 2rem)) !important;
+
+  padding:
+    clamp(6.8rem, 10vh, 8.5rem)
+    0
+    clamp(3rem, 6vh, 5rem)
+    clamp(3rem, 5vw, 5.5rem) !important;
+
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Placa editorial: acá se diferencia de la Home */
+.page-custom-build .custom-hero__content {
+  width: 100% !important;
+
+  padding: clamp(2rem, 3vw, 3rem) !important;
+
+  border: 1px solid rgba(250, 248, 242, 0.16) !important;
+  border-radius: 0 42px 0 0 !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(7, 27, 23, 0.92),
+      rgba(23, 61, 53, 0.82)
+    ) !important;
+
+  box-shadow:
+    0 34px 80px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(250, 248, 242, 0.08) !important;
+
+  backdrop-filter: blur(14px) !important;
+}
+
+/* Título del curso: más compacto que la Home */
+.page-custom-build .custom-hero__title {
+  margin: 0 !important;
+
+  font-size: clamp(4.8rem, 7vw, 7.8rem) !important;
+  line-height: 0.82 !important;
+  letter-spacing: -0.06em !important;
+
+  color: var(--color-cream-soft, #FAF5EA) !important;
+}
+
+/* Bajada */
+.page-custom-build .custom-hero__desc {
+  max-width: 29ch !important;
+
+  margin-top: 1.4rem !important;
+
+  font-size: clamp(0.98rem, 1.15vw, 1.18rem) !important;
+  line-height: 1.35 !important;
+  font-weight: 600 !important;
+
+  color: rgba(250, 248, 242, 0.82) !important;
+}
+
+/* Datos del curso como ficha técnica */
+.page-custom-build .custom-hero__meta {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 0.75rem !important;
+
+  margin-top: 1.8rem !important;
+  padding-top: 1.2rem !important;
+
+  border-top: 1px solid rgba(250, 248, 242, 0.16) !important;
+}
+
+.page-custom-build .custom-hero__meta li {
+  display: flex !important;
+  justify-content: space-between !important;
+  gap: 1rem !important;
+
+  padding-bottom: 0.75rem !important;
+
+  border-bottom: 1px solid rgba(250, 248, 242, 0.1) !important;
+}
+
+.page-custom-build .custom-hero__meta-label,
+.page-custom-build .custom-hero__price {
+  font-size: 0.68rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+
+  color: rgba(250, 248, 242, 0.58) !important;
+}
+
+/* CTA */
+.page-custom-build .custom-hero__actions {
+  margin-top: 1.7rem !important;
+}
+
+/* Movimiento diferente al de Home */
+@keyframes customBuildHeroImage {
+  0% {
+    transform: scale(1.04) translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: scale(1.1) translate3d(-18px, -10px, 0);
+  }
+}
+
+/* Mobile */
+@media (max-width: 760px) {
+  .page-custom-build .custom-hero__col--text {
+    width: 100% !important;
+
+    padding:
+      7rem
+      var(--container-pad, 1.25rem)
+      3rem !important;
+  }
+
+  .page-custom-build .custom-hero__content {
+    padding: 1.6rem !important;
+  }
+
+  .page-custom-build .custom-hero__title {
+    font-size: clamp(4rem, 16vw, 5.8rem) !important;
+  }
+
+  .page-custom-build .custom-hero::after {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(6, 35, 30, 0.9) 0%,
+        rgba(6, 35, 30, 0.62) 48%,
+        rgba(6, 35, 30, 0.92) 100%
+      ) !important;
+  }
+
+  .page-custom-build .custom-hero__img {
+    object-position: 62% center !important;
+  }
+}
+/* ============================================================
+   CUSTOM BUILD HERO — versión full image + card flotante
+   ============================================================ */
+
+.page-custom-build .custom-hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  overflow: hidden;
+  background: #091b17;
+}
+
+/* La imagen ocupa TODO el hero */
+.page-custom-build .custom-hero__col--media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.page-custom-build .custom-hero__img {
+  width: 100%;
+  height: 100%;
+  display: block;
+
+  object-fit: cover;
+  object-position: center center;
+
+  /* menos zoom */
+  transform: scale(1.01);
+
+  filter: saturate(0.96) contrast(1.03) brightness(0.88);
+
+  animation: customHeroFloat 10s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+/* Capa oscura MUY suave para que la card y el nav se lean */
+.page-custom-build .custom-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(6, 27, 23, 0.48) 0%,
+      rgba(6, 27, 23, 0.26) 28%,
+      rgba(6, 27, 23, 0.10) 52%,
+      rgba(6, 27, 23, 0.14) 100%
+    );
+}
+
+/* Columna de texto ahora flota arriba de la imagen */
+.page-custom-build .custom-hero__col--text {
+  position: relative;
+  z-index: 2;
+
+  min-height: 100vh;
+  min-height: 100svh;
+
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  padding:
+    clamp(6.5rem, 9vh, 8rem)
+    clamp(2rem, 4vw, 4rem)
+    clamp(3rem, 5vh, 4rem)
+    clamp(3rem, 5vw, 5.5rem);
+}
+
+/* Card */
+.page-custom-build .custom-hero__content {
+  width: min(100%, 520px);
+
+  padding: clamp(2rem, 2.5vw, 2.75rem);
+
+  border-radius: 0 44px 0 0;
+  border: 1px solid rgba(250, 245, 234, 0.14);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(8, 35, 30, 0.78),
+      rgba(18, 63, 54, 0.68)
+    );
+
+  backdrop-filter: blur(12px);
+
+  box-shadow:
+    0 28px 60px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+/* Título */
+.page-custom-build .custom-hero__title {
+  margin: 0;
+  font-size: clamp(4.8rem, 7vw, 7.6rem);
+  line-height: 0.84;
+  letter-spacing: -0.06em;
+  color: var(--color-cream-soft);
+}
+
+/* Bajada */
+.page-custom-build .custom-hero__desc {
+  margin-top: 1.4rem;
+  max-width: 28ch;
+
+  font-size: clamp(1rem, 1.15vw, 1.14rem);
+  line-height: 1.42;
+  font-weight: 600;
+  color: rgba(250, 245, 234, 0.86);
+}
+
+/* Meta */
+.page-custom-build .custom-hero__meta {
+  margin-top: 1.8rem;
+  padding-top: 1.1rem;
+
+  border-top: 1px solid rgba(250, 245, 234, 0.14);
+  border-bottom: 1px solid rgba(250, 245, 234, 0.12);
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem 1.25rem;
+}
+
+.page-custom-build .custom-hero__meta,
+.page-custom-build .custom-hero__price {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(250, 245, 234, 0.62);
+}
+
+/* CTA */
+.page-custom-build .custom-hero__actions {
+  margin-top: 1.8rem;
+}
+
+/* Animación MUY sutil */
+@keyframes customHeroFloat {
+  0% {
+    transform: scale(1.01) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: scale(1.04) translate3d(-10px, -6px, 0);
+  }
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .page-custom-build .custom-hero__col--text {
+    padding:
+      7rem
+      1.5rem
+      3rem
+      1.5rem;
+    align-items: flex-end;
+  }
+
+  .page-custom-build .custom-hero__content {
+    width: 100%;
+    max-width: 100%;
+    padding: 1.7rem;
+  }
+
+  .page-custom-build .custom-hero__title {
+    font-size: clamp(3.8rem, 15vw, 5.6rem);
+  }
+
+  .page-custom-build .custom-hero__img {
+    object-position: 68% center;
+  }
+
+  .page-custom-build .custom-hero::after {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(6, 27, 23, 0.24) 0%,
+        rgba(6, 27, 23, 0.14) 35%,
+        rgba(6, 27, 23, 0.72) 100%
+      );
+  }
+}
+/* ============================================================
+   FIX CUSTOM BUILD HERO — eliminar rectángulo verde detrás de la card
+   Imagen full bleed real + card flotante
+   ============================================================ */
+
+/* El hero completo es imagen */
+.page-custom-build .custom-hero {
+  position: relative !important;
+  min-height: 100vh !important;
+  min-height: 100svh !important;
+  overflow: hidden !important;
+  background: #091b17 !important;
+}
+
+/* Imagen ocupando toda la pantalla */
+.page-custom-build .custom-hero__col--media {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  overflow: hidden !important;
+}
+
+.page-custom-build .custom-hero__img {
+  position: absolute !important;
+  inset: 0 !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  display: block !important;
+
+  object-fit: cover !important;
+  object-position: 56% center !important;
+
+  transform: scale(1.01) translate3d(0, 0, 0) !important;
+  animation: customHeroFloatFinal 10s ease-in-out infinite alternate !important;
+
+  filter: saturate(0.96) contrast(1.03) brightness(0.88) !important;
+
+  will-change: transform !important;
+}
+
+/* Capa de lectura sobre toda la imagen */
+.page-custom-build .custom-hero::after {
+  content: "" !important;
+  display: block !important;
+
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+
+  pointer-events: none !important;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(6, 27, 23, 0.58) 0%,
+      rgba(6, 27, 23, 0.36) 32%,
+      rgba(6, 27, 23, 0.12) 60%,
+      rgba(6, 27, 23, 0.08) 100%
+    ) !important;
+}
+
+/* ESTE ES EL FIX CLAVE: elimina el fondo verde anterior */
+.page-custom-build .custom-hero__col--text {
+  position: relative !important;
+  z-index: 2 !important;
+
+  width: 100% !important;
+  min-height: 100vh !important;
+  min-height: 100svh !important;
+
+  display: flex !important;
+  align-items: center !important;
+
+  padding:
+    clamp(6.5rem, 9vh, 8rem)
+    clamp(2rem, 4vw, 4rem)
+    clamp(3rem, 5vh, 4rem)
+    clamp(3rem, 5vw, 5.5rem) !important;
+
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* Card flotante */
+.page-custom-build .custom-hero__content {
+  width: min(100%, 520px) !important;
+
+  padding: clamp(2rem, 2.5vw, 2.75rem) !important;
+
+  border-radius: 0 44px 0 0 !important;
+  border: 1px solid rgba(250, 245, 234, 0.16) !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(8, 35, 30, 0.74),
+      rgba(23, 61, 53, 0.54)
+    ) !important;
+
+  backdrop-filter: blur(12px) !important;
+
+  box-shadow:
+    0 28px 60px rgba(0, 0, 0, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Animación */
+@keyframes customHeroFloatFinal {
+  0% {
+    transform: scale(1.01) translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: scale(1.04) translate3d(-10px, -6px, 0);
+  }
+}
+/* ============================================================
+   FAQ — PREGUNTAS MÁS GRANDES
+   ============================================================ */
+
+.custom-accordion__trigger {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 1.45vw, 1.35rem) !important;
+  line-height: 1.25;
+  font-weight: 600;
+}
+
+.custom-accordion__icon {
+  font-size: 1.25rem;
+}
+.custom-accordion__body {
+  font-size: 1rem;
+  line-height: 1.65;
+}
+@media (max-width: 640px) {
+  .custom-accordion__trigger {
+    font-size: 1.15rem !important;
+  }
+
+  .custom-accordion__body {
+    font-size: 0.95rem;
+  }
 }

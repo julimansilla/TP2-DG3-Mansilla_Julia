@@ -257,7 +257,7 @@ workshopTriggers.forEach((trigger) => {
   nextBtn.addEventListener('click', () => scrollByCard(1));
 
 /* ============================================
-   ACORDEÓN DE MADERAS
+   ACORDEÓN DE MADERAS — APERTURA Y CIERRE
    ============================================ */
 
 const woodPanels = document.querySelectorAll('[data-wood-panel]');
@@ -265,18 +265,46 @@ const woodPanels = document.querySelectorAll('[data-wood-panel]');
 woodPanels.forEach((panel) => {
   const button = panel.querySelector('.wood-panel__button');
 
+  if (!button) return;
+
   button.addEventListener('click', () => {
-    /* Cerramos los demás paneles */
+    /* Guardamos el estado antes de modificar las clases */
+    const wasOpen = panel.classList.contains('is-active');
+
+    /* Cerramos todas las cards */
     woodPanels.forEach((otherPanel) => {
-      const otherButton = otherPanel.querySelector('.wood-panel__button');
+      const otherButton = otherPanel.querySelector(
+        '.wood-panel__button'
+      );
 
       otherPanel.classList.remove('is-active');
-      otherButton.setAttribute('aria-expanded', 'false');
+
+      if (otherButton) {
+        otherButton.setAttribute(
+          'aria-expanded',
+          'false'
+        );
+      }
     });
 
-    /* Abrimos el panel seleccionado */
-    panel.classList.add('is-active');
-    button.setAttribute('aria-expanded', 'true');
+    /*
+      Si la card estaba cerrada, la abrimos.
+      Si ya estaba abierta, queda cerrada.
+    */
+if (!wasOpen) {
+  panel.classList.add('is-active');
+  button.setAttribute('aria-expanded', 'true');
+
+  /* En mobile llevamos la card abierta al comienzo de la pantalla */
+  if (window.matchMedia('(max-width: 640px)').matches) {
+    window.setTimeout(() => {
+      panel.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }, 150);
+  }
+}
   });
 });
 

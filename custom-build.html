@@ -8,8 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cascadia+Code:wght@400;500;600;700&family=Gasoek+One&family=Inter:wght@300;400;500;600;700;800&family=Righteous&family=Rubik+Mono+One&family=Savate&display=swap" rel="stylesheet">
-  <!-- Tokens compartidos de la home -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <!-- Estilos específicos de esta página -->
   <link rel="stylesheet" href="custom-build.css">
@@ -62,12 +61,9 @@
       </p>
       <ul class="custom-hero__meta reveal" aria-label="Datos del programa">
         <li>
-          <span class="custom-hero__meta-label">12 clases · 3 meses</span>
+          <span class="custom-hero__meta-label">12 clases · Desde $65.0000 por clase</span>
         </li>
-        <li>
-          <!-- DATO EDITABLE: actualizar valor de inversión aquí -->
-          <span class="custom-hero__price">Desde $65.000 por clase</span>
-        </li>
+
       </ul>
       <div class="custom-hero__actions reveal">
         <a href="#custom-contact" class="btn btn--primary btn--pill btn--arrow">
@@ -101,13 +97,10 @@
 <section
   class="custom-result"
   id="resultado"
-  style="--result-image: url('images/custom-build/result-process.jpg');"
 >
   <div class="custom-result__inner">
 
-    <!-- Encabezado -->
     <header class="custom-result__head">
-
       <div class="custom-result__heading">
         <p class="custom-eyebrow">
           El resultado
@@ -115,7 +108,7 @@
 
         <h2 class="custom-result__title">
           <span>Cientos de decisiones.</span>
-          <strong>Un solo instrumento.</strong>
+          <strong>Un solo <em>instrumento.</em></strong>
         </h2>
       </div>
 
@@ -123,161 +116,67 @@
         Desde la selección de la madera hasta la primera calibración,
         cada etapa transforma la materia en un instrumento irrepetible.
       </p>
-
     </header>
 
-    <!-- =====================================================
-         DESKTOP — Imagen panorámica
-         ===================================================== -->
+    <div class="custom-result__cards" aria-label="Etapas visuales del resultado">
 
-    <div class="custom-result__sequence">
+      <article class="custom-result-card custom-result-card--one reveal" data-result-step="0">
+        <figure class="custom-result-card__media">
+          <img
+            src="images/custom-build/result-materia.jpg"
+            alt="Madera seleccionada y preparada para la construcción de una guitarra"
+            loading="lazy"
+          >
+        </figure>
 
-      <img
-        src="images/custom-build/result-process.jpg"
-        alt="Secuencia de construcción de una guitarra: madera en bruto, cuerpo en proceso e instrumento terminado"
-        class="custom-result__image"
-        loading="lazy"
-      >
-
-      <!-- Oscurecimiento para mejorar la lectura -->
-      <div
-        class="custom-result__overlay"
-        aria-hidden="true"
-      ></div>
-
-      <!-- Divisiones verticales -->
-      <div
-        class="custom-result__dividers"
-        aria-hidden="true"
-      >
-        <span></span>
-        <span></span>
-      </div>
-
-      <!-- Etapas -->
-      <ol class="custom-result__steps">
-
-        <li
-          class="custom-result__step"
-          data-result-step="0"
-        >
-          <div class="custom-result__step-head">
-            <span class="custom-result__number">01</span>
-            <span class="custom-result__category">Materia</span>
-          </div>
-
-          <p class="custom-result__step-title">
-            Selección y preparación
-          </p>
-
-          <p class="custom-result__step-copy">
-            Todo comienza con una pieza de madera y la lectura de su veta.
-          </p>
-        </li>
-
-        <li
-          class="custom-result__step"
-          data-result-step="1"
-        >
-          <div class="custom-result__step-head">
-            <span class="custom-result__number">02</span>
-            <span class="custom-result__category">Forma</span>
-          </div>
-
-          <p class="custom-result__step-title">
-            Corte, talla y ensamblado
-          </p>
-
-          <p class="custom-result__step-copy">
-            Cada curva se define a mano, según el diseño y la ergonomía.
-          </p>
-        </li>
-
-        <li
-          class="custom-result__step"
-          data-result-step="2"
-        >
-          <div class="custom-result__step-head">
-            <span class="custom-result__number">03</span>
-            <span class="custom-result__category">Identidad</span>
-          </div>
-
-          <p class="custom-result__step-title">
-            Acabado y calibración
-          </p>
-
-          <p class="custom-result__step-copy">
-            El proceso termina cuando el instrumento encuentra su propia voz.
-          </p>
-        </li>
-
-      </ol>
-
-    </div>
-
-    <!-- =====================================================
-         MOBILE — Tres recortes de la imagen
-         ===================================================== -->
-
-    <div class="custom-result__mobile">
-
-      <article
-        class="custom-result-card custom-result-card--one"
-        data-result-step="0"
-      >
-        <div class="custom-result-card__overlay"></div>
+        <div class="custom-result-card__overlay" aria-hidden="true"></div>
 
         <div class="custom-result-card__content">
           <span class="custom-result-card__number">01</span>
-
-          <p class="custom-result-card__category">
-            Materia
-          </p>
-
+          <p class="custom-result-card__category">Materia</p>
           <h3>Selección y preparación</h3>
-
           <p>
             Todo comienza con una pieza de madera y la lectura de su veta.
           </p>
         </div>
       </article>
 
-      <article
-        class="custom-result-card custom-result-card--two"
-        data-result-step="1"
-      >
-        <div class="custom-result-card__overlay"></div>
+      <article class="custom-result-card custom-result-card--two reveal" data-result-step="1">
+        <figure class="custom-result-card__media">
+          <img
+            src="images/custom-build/result-forma.jpg"
+            alt="Cuerpo de guitarra en proceso de corte, talla y ensamblado"
+            loading="lazy"
+          >
+        </figure>
+
+        <div class="custom-result-card__overlay" aria-hidden="true"></div>
 
         <div class="custom-result-card__content">
           <span class="custom-result-card__number">02</span>
-
-          <p class="custom-result-card__category">
-            Forma
-          </p>
-
+          <p class="custom-result-card__category">Forma</p>
           <h3>Corte, talla y ensamblado</h3>
-
           <p>
             Cada curva se define a mano, según el diseño y la ergonomía.
           </p>
         </div>
       </article>
 
-      <article
-        class="custom-result-card custom-result-card--three"
-        data-result-step="2"
-      >
-        <div class="custom-result-card__overlay"></div>
+      <article class="custom-result-card custom-result-card--three reveal" data-result-step="2">
+        <figure class="custom-result-card__media">
+          <img
+            src="images/custom-build/result-identidad.jpg"
+            alt="Guitarra terminada durante el acabado y la calibración final"
+            loading="lazy"
+          >
+        </figure>
+
+        <div class="custom-result-card__overlay" aria-hidden="true"></div>
 
         <div class="custom-result-card__content">
           <span class="custom-result-card__number">03</span>
-
-          <p class="custom-result-card__category">
-            Identidad
-          </p>
-
+          <p class="custom-result-card__category">Identidad</p>
           <h3>Acabado y calibración</h3>
-
           <p>
             El proceso termina cuando el instrumento encuentra su propia voz.
           </p>
@@ -388,29 +287,28 @@
       </ol>
     </div>
 
-<div class="custom-process__right reveal">
+    <div class="custom-process__right reveal">
+      <video
+        class="custom-process__video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        poster="images/custom-build/p"
+        aria-label="Video del proceso de construcción de una guitarra en el taller"
+      >
+        <source src="images/custom-build/proceso-custom-build.mov" type="video/mp4">
+        Tu navegador no puede reproducir este video.
+      </video>
 
-<div class="custom-process__right reveal">
+      <div class="custom-process__video-overlay" aria-hidden="true"></div>
 
-  <img
-    src="images/custom-build/proceso-custom-build.jpg"
-    alt="Proceso artesanal de construcción de una guitarra en el taller"
-    class="custom-process__img"
-    loading="lazy"
-  >
-
-  <div
-    class="custom-process__image-overlay"
-    aria-hidden="true"
-  ></div>
-
-  <p class="custom-process__image-label">
-    Proceso de construcción
-  </p>
-
-</div></div>
-
-</div>
+      <p class="custom-process__video-label">
+        <span class="custom-process__video-dot" aria-hidden="true"></span>
+        Proceso de construcción
+      </p>
+    </div>
 
   </div>
 </section>
@@ -430,16 +328,23 @@
 
       <!-- Columna izquierda: guitarra -->
       <div class="custom-config__visual">
-        <div class="custom-config__guitar-wrap" id="guitarWrap">
-          <img
-            src="images/custom-build/configurator/guitar-arce.jpg"
-            alt="Guitarra construida en madera de arce"
-            class="custom-config__guitar-img"
-            id="guitarImg"
-            loading="lazy"
-          >
+<div class="custom-config__guitar-wrap" id="guitarWrap">
+  <img
+    src="images/custom-build/configurator/guitar-arce-clasica.png"
+    alt="Guitarra clásica construida en madera de arce"
+    class="custom-config__guitar-img"
+    id="guitarImg"
+    loading="lazy"
+  >
 
-        </div>
+  <img
+    src="images/custom-build/configurator/guitar-arce-clasica.png"
+    alt=""
+    class="custom-config__guitar-finish-img"
+    id="guitarFinishImg"
+    aria-hidden="true"
+  >
+</div>
       </div>
 
       <!-- Columna derecha -->
@@ -451,71 +356,145 @@
             Cada <em>decisión</em> modifica el resultado.
           </h2>
           <p class="custom-config__lead">
-            Elegí la madera principal y observá cómo cambia la identidad visual del instrumento.
-  Cada veta define una presencia distinta.
+            Elegí madera, forma del cuerpo y acabado. Cada decisión modifica
+            la presencia visual y el carácter final del instrumento.
           </p>
         </div>
 
 
-        <!-- 01 Madera -->
-<fieldset
-  class="custom-config__group"
-  data-config="wood"
->
-          <legend class="custom-config__group-label">
-            <span class="custom-config__group-num" aria-hidden="true">01</span>
-            Concepto y diseño
-          </legend>
+<!-- 01 Madera -->
+<fieldset class="custom-config__group" data-config="wood">
+  <legend class="custom-config__group-label">
+    <span class="custom-config__group-num" aria-hidden="true">01</span>
+    Madera principal
+  </legend>
 
-          <div class="custom-config__options custom-config__options--textures">
+  <div class="custom-config__options custom-config__options--textures">
 
-            <button
-              type="button"
-              class="custom-config__btn custom-config__btn--texture is-selected"
-              aria-pressed="true"
-              data-value="Arce"
-              data-img="images/custom-build/configurator/guitar-arce.jpg"
-              data-alt="Guitarra construida en madera de arce"
-            >
-              <span class="custom-config__texture" aria-hidden="true">
-                <img src="images/materialidad-arce.jpg" alt="">
-              </span>
-              <span class="custom-config__option-name">Arce</span>
-              <span class="custom-config__option-sub">Brillante, estable, definido.</span>
-            </button>
+    <button
+      type="button"
+      class="custom-config__btn custom-config__btn--texture is-selected"
+      aria-pressed="true"
+      data-value="arce"
+    >
+      <span class="custom-config__texture" aria-hidden="true">
+        <img src="images/materialidad-arce.jpg" alt="">
+      </span>
+      <span class="custom-config__option-name">Arce</span>
+      <span class="custom-config__option-sub">Brillante, estable, definido.</span>
+    </button>
 
-            <button
-              type="button"
-              class="custom-config__btn custom-config__btn--texture"
-              aria-pressed="false"
-              data-value="Caoba"
-              data-img="images/custom-build/configurator/guitar-caoba.jpg"
-              data-alt="Guitarra construida en madera de caoba"
-            >
-              <span class="custom-config__texture" aria-hidden="true">
-                <img src="images/materialidad-caoba.jpg" alt="">
-              </span>
-              <span class="custom-config__option-name">Caoba</span>
-              <span class="custom-config__option-sub">Cálida, profunda y con sustain.</span>
-            </button>
+    <button
+      type="button"
+      class="custom-config__btn custom-config__btn--texture"
+      aria-pressed="false"
+      data-value="caoba"
+    >
+      <span class="custom-config__texture" aria-hidden="true">
+        <img src="images/materialidad-caoba.jpg" alt="">
+      </span>
+      <span class="custom-config__option-name">Caoba</span>
+      <span class="custom-config__option-sub">Cálida, profunda y con sustain.</span>
+    </button>
 
-            <button
-              type="button"
-              class="custom-config__btn custom-config__btn--texture"
-              aria-pressed="false"
-              data-value="Nogal"
-              data-img="images/custom-build/configurator/guitar-nogal.jpg"
-              data-alt="Guitarra construida en madera de nogal"
-            >
-              <span class="custom-config__texture" aria-hidden="true">
-                <img src="images/materialidad-nogal.jpg" alt="">
-              </span>
-              <span class="custom-config__option-name">Nogal</span>
-              <span class="custom-config__option-sub">Equilibrada, expresiva y única.</span>
-            </button>
+    <button
+      type="button"
+      class="custom-config__btn custom-config__btn--texture"
+      aria-pressed="false"
+      data-value="nogal"
+    >
+      <span class="custom-config__texture" aria-hidden="true">
+        <img src="images/materialidad-nogal.jpg" alt="">
+      </span>
+      <span class="custom-config__option-name">Nogal</span>
+      <span class="custom-config__option-sub">Equilibrada, expresiva y única.</span>
+    </button>
 
-          </div>
-        </fieldset>
+  </div>
+</fieldset>
+
+
+<!-- 02 Forma del cuerpo -->
+<fieldset class="custom-config__group" data-config="shape">
+  <legend class="custom-config__group-label">
+    <span class="custom-config__group-num" aria-hidden="true">02</span>
+    Forma del cuerpo
+  </legend>
+
+  <div class="custom-config__options custom-config__options--text">
+
+    <button
+      type="button"
+      class="custom-config__btn is-selected"
+      aria-pressed="true"
+      data-value="clasica"
+    >
+      <span class="custom-config__option-name">Clásica</span>
+    </button>
+
+    <button
+      type="button"
+      class="custom-config__btn"
+      aria-pressed="false"
+      data-value="auditorium"
+    >
+      <span class="custom-config__option-name">Auditorium</span>
+    </button>
+
+    <button
+      type="button"
+      class="custom-config__btn"
+      aria-pressed="false"
+      data-value="compacta"
+    >
+      <span class="custom-config__option-name">Compacta</span>
+    </button>
+
+  </div>
+</fieldset>
+
+
+<!-- 03 Acabado -->
+<fieldset class="custom-config__group" data-config="finish">
+  <legend class="custom-config__group-label">
+    <span class="custom-config__group-num" aria-hidden="true">03</span>
+    Acabado
+  </legend>
+
+  <div class="custom-config__options custom-config__options--text">
+
+    <button
+      type="button"
+      class="custom-config__btn is-selected"
+      aria-pressed="true"
+      data-value="natural"
+      data-overlay="transparent"
+    >
+      <span class="custom-config__option-name">Natural</span>
+    </button>
+
+    <button
+      type="button"
+      class="custom-config__btn"
+      aria-pressed="false"
+      data-value="tostado"
+      data-overlay="rgba(190, 112, 22, 0.22)"
+    >
+      <span class="custom-config__option-name">Tostado</span>
+    </button>
+
+    <button
+      type="button"
+      class="custom-config__btn"
+      aria-pressed="false"
+      data-value="oscuro"
+      data-overlay="rgba(42, 22, 14, 0.38)"
+    >
+      <span class="custom-config__option-name">Oscuro</span>
+    </button>
+
+  </div>
+</fieldset>
 
 
 
@@ -1332,5 +1311,6 @@
 </footer>
 
 <script src="custom-build.js"></script>
+<script src="custom-build-ajustes.js"></script>
 </body>
 </html>
