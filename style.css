@@ -338,9 +338,9 @@ ul {
 
 .logo {
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: clamp(1.35rem, 1.8vw, 1.75rem);
   font-weight: 800;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
   color: var(--color-warm-white);
   transition: color 0.4s var(--ease);
   z-index: 101;
@@ -6563,5 +6563,38 @@ body::before {
       animation-name: homeHeroPhotoBreathMobile !important;
       animation-duration: 10s !important;
     }
+  }
+}
+/* ============================================================
+   FIX NAV — LOGO TRASTES MÁS GRANDE
+   Pegar último de todo
+   ============================================================ */
+
+.header .logo,
+.header:not(.is-scrolled) .logo,
+.header.is-scrolled .logo {
+  font-size: clamp(1.85rem, 2.6vw, 2.45rem) !important;
+  line-height: 1 !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.045em !important;
+}
+
+/* Ajustamos un poco la altura de la navbar para que no quede apretado */
+.header__inner {
+  padding-top: 1.15rem !important;
+  padding-bottom: 1.15rem !important;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .header .logo,
+  .header:not(.is-scrolled) .logo,
+  .header.is-scrolled .logo {
+    font-size: 2rem !important;
+  }
+
+  .header__inner {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
   }
 }
